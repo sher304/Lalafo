@@ -1,0 +1,6 @@
+framework module Pods_Lalafo {
+  umbrella header "Pods-Lalafo-umbrella.h"
+
+  export *
+  module * { export * }
+}

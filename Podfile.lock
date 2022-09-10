@@ -1,0 +1,24 @@
+PODS:
+  - Hero (1.6.2)
+  - Kingfisher (7.3.2)
+  - SnapKit (5.6.0)
+
+DEPENDENCIES:
+  - Hero
+  - Kingfisher
+  - SnapKit
+
+SPEC REPOS:
+  trunk:
+    - Hero
+    - Kingfisher
+    - SnapKit
+
+SPEC CHECKSUMS:
+  Hero: c69009dbc9e2f0472e081adc644dba05fcedae72
+  Kingfisher: 0086ad83719761ba9b2cdaf6ef4d5b4878cbae23
+  SnapKit: e01d52ebb8ddbc333eefe2132acf85c8227d9c25
+
+PODFILE CHECKSUM: 2c87c0d5eefb9199421ed81aabf03d2f6319be72
+
+COCOAPODS: 1.11.3
