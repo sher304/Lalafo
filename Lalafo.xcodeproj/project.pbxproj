@@ -8,24 +8,50 @@
 
 /* Begin PBXBuildFile section */
 		1A2A4355D5F22F64AA5B6508 /* Pods_Lalafo.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 487EF84871523F4470262528 /* Pods_Lalafo.framework */; };
+		60DEB8F428CCF1260003D26C /* HomePresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 60DEB8F328CCF1260003D26C /* HomePresenter.swift */; };
+		60DEB8F628CCF1330003D26C /* HomeRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 60DEB8F528CCF1330003D26C /* HomeRouter.swift */; };
+		60DEB8F828CCF1580003D26C /* HomeBuilder.swift in Sources */ = {isa = PBXBuildFile; fileRef = 60DEB8F728CCF1580003D26C /* HomeBuilder.swift */; };
+		60DEB8FB28CCF29C0003D26C /* DetailVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 60DEB8FA28CCF29C0003D26C /* DetailVC.swift */; };
+		60DEB8FD28CCF2CC0003D26C /* DetailPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 60DEB8FC28CCF2CC0003D26C /* DetailPresenter.swift */; };
+		60DEB8FF28CCF2D30003D26C /* DetailBuilder.swift in Sources */ = {isa = PBXBuildFile; fileRef = 60DEB8FE28CCF2D20003D26C /* DetailBuilder.swift */; };
+		60DEB90128CCF2DA0003D26C /* DetailRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 60DEB90028CCF2DA0003D26C /* DetailRouter.swift */; };
+		60DEB90428CCF3A90003D26C /* CartVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 60DEB90328CCF3A90003D26C /* CartVC.swift */; };
+		60DEB90628CCF3E50003D26C /* CartPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 60DEB90528CCF3E50003D26C /* CartPresenter.swift */; };
+		60DEB90828CCF41D0003D26C /* CartRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 60DEB90728CCF41D0003D26C /* CartRouter.swift */; };
+		60DEB90C28CCF43F0003D26C /* CartBuilder.swift in Sources */ = {isa = PBXBuildFile; fileRef = 60DEB90B28CCF43F0003D26C /* CartBuilder.swift */; };
+		60DEB90F28CCF4990003D26C /* OnBoardVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 60DEB90E28CCF4990003D26C /* OnBoardVC.swift */; };
+		60DEB91128CCF4BF0003D26C /* OnBoardBuilder.swift in Sources */ = {isa = PBXBuildFile; fileRef = 60DEB91028CCF4BF0003D26C /* OnBoardBuilder.swift */; };
+		60DEB91328CCF50A0003D26C /* OnBoardPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 60DEB91228CCF50A0003D26C /* OnBoardPresenter.swift */; };
+		60DEB91528CCF5A50003D26C /* OnBoardRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 60DEB91428CCF5A50003D26C /* OnBoardRouter.swift */; };
 		60F5534B28CCEF3B0048D7C6 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 60F5534A28CCEF3B0048D7C6 /* AppDelegate.swift */; };
 		60F5534D28CCEF3B0048D7C6 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 60F5534C28CCEF3B0048D7C6 /* SceneDelegate.swift */; };
-		60F5534F28CCEF3B0048D7C6 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 60F5534E28CCEF3B0048D7C6 /* ViewController.swift */; };
-		60F5535228CCEF3B0048D7C6 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 60F5535028CCEF3B0048D7C6 /* Main.storyboard */; };
+		60F5534F28CCEF3B0048D7C6 /* HomeVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 60F5534E28CCEF3B0048D7C6 /* HomeVC.swift */; };
 		60F5535428CCEF3C0048D7C6 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 60F5535328CCEF3C0048D7C6 /* Assets.xcassets */; };
-		60F5535728CCEF3C0048D7C6 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 60F5535528CCEF3C0048D7C6 /* LaunchScreen.storyboard */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
 		487EF84871523F4470262528 /* Pods_Lalafo.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Lalafo.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		5A761EBA5A6E619118866EDB /* Pods-Lalafo.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Lalafo.release.xcconfig"; path = "Target Support Files/Pods-Lalafo/Pods-Lalafo.release.xcconfig"; sourceTree = "<group>"; };
+		60DEB8F328CCF1260003D26C /* HomePresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomePresenter.swift; sourceTree = "<group>"; };
+		60DEB8F528CCF1330003D26C /* HomeRouter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeRouter.swift; sourceTree = "<group>"; };
+		60DEB8F728CCF1580003D26C /* HomeBuilder.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeBuilder.swift; sourceTree = "<group>"; };
+		60DEB8FA28CCF29C0003D26C /* DetailVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailVC.swift; sourceTree = "<group>"; };
+		60DEB8FC28CCF2CC0003D26C /* DetailPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailPresenter.swift; sourceTree = "<group>"; };
+		60DEB8FE28CCF2D20003D26C /* DetailBuilder.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailBuilder.swift; sourceTree = "<group>"; };
+		60DEB90028CCF2DA0003D26C /* DetailRouter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailRouter.swift; sourceTree = "<group>"; };
+		60DEB90328CCF3A90003D26C /* CartVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CartVC.swift; sourceTree = "<group>"; };
+		60DEB90528CCF3E50003D26C /* CartPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CartPresenter.swift; sourceTree = "<group>"; };
+		60DEB90728CCF41D0003D26C /* CartRouter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CartRouter.swift; sourceTree = "<group>"; };
+		60DEB90B28CCF43F0003D26C /* CartBuilder.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CartBuilder.swift; sourceTree = "<group>"; };
+		60DEB90E28CCF4990003D26C /* OnBoardVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OnBoardVC.swift; sourceTree = "<group>"; };
+		60DEB91028CCF4BF0003D26C /* OnBoardBuilder.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OnBoardBuilder.swift; sourceTree = "<group>"; };
+		60DEB91228CCF50A0003D26C /* OnBoardPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OnBoardPresenter.swift; sourceTree = "<group>"; };
+		60DEB91428CCF5A50003D26C /* OnBoardRouter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OnBoardRouter.swift; sourceTree = "<group>"; };
 		60F5534728CCEF3B0048D7C6 /* Lalafo.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Lalafo.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		60F5534A28CCEF3B0048D7C6 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		60F5534C28CCEF3B0048D7C6 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
-		60F5534E28CCEF3B0048D7C6 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
-		60F5535128CCEF3B0048D7C6 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
+		60F5534E28CCEF3B0048D7C6 /* HomeVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeVC.swift; sourceTree = "<group>"; };
 		60F5535328CCEF3C0048D7C6 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
-		60F5535628CCEF3C0048D7C6 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		60F5535828CCEF3C0048D7C6 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		A47D84DD2414B3474E4BF5D7 /* Pods-Lalafo.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Lalafo.debug.xcconfig"; path = "Target Support Files/Pods-Lalafo/Pods-Lalafo.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -56,8 +82,69 @@
 				A47D84DD2414B3474E4BF5D7 /* Pods-Lalafo.debug.xcconfig */,
 				5A761EBA5A6E619118866EDB /* Pods-Lalafo.release.xcconfig */,
 			);
-			name = Pods;
 			path = Pods;
+			sourceTree = "<group>";
+		};
+		60DEB8F128CCF08D0003D26C /* Modules */ = {
+			isa = PBXGroup;
+			children = (
+				60DEB90D28CCF48C0003D26C /* OnBoard */,
+				60DEB90228CCF39C0003D26C /* CartVC */,
+				60DEB8F928CCF28F0003D26C /* DetailVC */,
+				60DEB8F228CCF0940003D26C /* HomeVC */,
+			);
+			path = Modules;
+			sourceTree = "<group>";
+		};
+		60DEB8F228CCF0940003D26C /* HomeVC */ = {
+			isa = PBXGroup;
+			children = (
+				60F5534E28CCEF3B0048D7C6 /* HomeVC.swift */,
+				60DEB8F328CCF1260003D26C /* HomePresenter.swift */,
+				60DEB8F528CCF1330003D26C /* HomeRouter.swift */,
+				60DEB8F728CCF1580003D26C /* HomeBuilder.swift */,
+			);
+			path = HomeVC;
+			sourceTree = "<group>";
+		};
+		60DEB8F928CCF28F0003D26C /* DetailVC */ = {
+			isa = PBXGroup;
+			children = (
+				60DEB8FA28CCF29C0003D26C /* DetailVC.swift */,
+				60DEB8FC28CCF2CC0003D26C /* DetailPresenter.swift */,
+				60DEB8FE28CCF2D20003D26C /* DetailBuilder.swift */,
+				60DEB90028CCF2DA0003D26C /* DetailRouter.swift */,
+			);
+			path = DetailVC;
+			sourceTree = "<group>";
+		};
+		60DEB90228CCF39C0003D26C /* CartVC */ = {
+			isa = PBXGroup;
+			children = (
+				60DEB90328CCF3A90003D26C /* CartVC.swift */,
+				60DEB90528CCF3E50003D26C /* CartPresenter.swift */,
+				60DEB90728CCF41D0003D26C /* CartRouter.swift */,
+				60DEB90B28CCF43F0003D26C /* CartBuilder.swift */,
+			);
+			path = CartVC;
+			sourceTree = "<group>";
+		};
+		60DEB90D28CCF48C0003D26C /* OnBoard */ = {
+			isa = PBXGroup;
+			children = (
+				60DEB90E28CCF4990003D26C /* OnBoardVC.swift */,
+				60DEB91028CCF4BF0003D26C /* OnBoardBuilder.swift */,
+				60DEB91228CCF50A0003D26C /* OnBoardPresenter.swift */,
+				60DEB91428CCF5A50003D26C /* OnBoardRouter.swift */,
+			);
+			path = OnBoard;
+			sourceTree = "<group>";
+		};
+		60DEB91628CCF5B60003D26C /* Network */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Network;
 			sourceTree = "<group>";
 		};
 		60F5533E28CCEF3B0048D7C6 = {
@@ -81,12 +168,11 @@
 		60F5534928CCEF3B0048D7C6 /* Lalafo */ = {
 			isa = PBXGroup;
 			children = (
+				60DEB91628CCF5B60003D26C /* Network */,
+				60DEB8F128CCF08D0003D26C /* Modules */,
 				60F5534A28CCEF3B0048D7C6 /* AppDelegate.swift */,
 				60F5534C28CCEF3B0048D7C6 /* SceneDelegate.swift */,
-				60F5534E28CCEF3B0048D7C6 /* ViewController.swift */,
-				60F5535028CCEF3B0048D7C6 /* Main.storyboard */,
 				60F5535328CCEF3C0048D7C6 /* Assets.xcassets */,
-				60F5535528CCEF3C0048D7C6 /* LaunchScreen.storyboard */,
 				60F5535828CCEF3C0048D7C6 /* Info.plist */,
 			);
 			path = Lalafo;
@@ -152,9 +238,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				60F5535728CCEF3C0048D7C6 /* LaunchScreen.storyboard in Resources */,
 				60F5535428CCEF3C0048D7C6 /* Assets.xcassets in Resources */,
-				60F5535228CCEF3B0048D7C6 /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -207,32 +291,28 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				60F5534F28CCEF3B0048D7C6 /* ViewController.swift in Sources */,
+				60DEB8F828CCF1580003D26C /* HomeBuilder.swift in Sources */,
+				60DEB90428CCF3A90003D26C /* CartVC.swift in Sources */,
+				60F5534F28CCEF3B0048D7C6 /* HomeVC.swift in Sources */,
+				60DEB90C28CCF43F0003D26C /* CartBuilder.swift in Sources */,
 				60F5534B28CCEF3B0048D7C6 /* AppDelegate.swift in Sources */,
+				60DEB8FD28CCF2CC0003D26C /* DetailPresenter.swift in Sources */,
+				60DEB90F28CCF4990003D26C /* OnBoardVC.swift in Sources */,
+				60DEB91328CCF50A0003D26C /* OnBoardPresenter.swift in Sources */,
+				60DEB91528CCF5A50003D26C /* OnBoardRouter.swift in Sources */,
+				60DEB8F428CCF1260003D26C /* HomePresenter.swift in Sources */,
+				60DEB90128CCF2DA0003D26C /* DetailRouter.swift in Sources */,
+				60DEB8FF28CCF2D30003D26C /* DetailBuilder.swift in Sources */,
+				60DEB90628CCF3E50003D26C /* CartPresenter.swift in Sources */,
+				60DEB91128CCF4BF0003D26C /* OnBoardBuilder.swift in Sources */,
+				60DEB90828CCF41D0003D26C /* CartRouter.swift in Sources */,
 				60F5534D28CCEF3B0048D7C6 /* SceneDelegate.swift in Sources */,
+				60DEB8F628CCF1330003D26C /* HomeRouter.swift in Sources */,
+				60DEB8FB28CCF29C0003D26C /* DetailVC.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXSourcesBuildPhase section */
-
-/* Begin PBXVariantGroup section */
-		60F5535028CCEF3B0048D7C6 /* Main.storyboard */ = {
-			isa = PBXVariantGroup;
-			children = (
-				60F5535128CCEF3B0048D7C6 /* Base */,
-			);
-			name = Main.storyboard;
-			sourceTree = "<group>";
-		};
-		60F5535528CCEF3C0048D7C6 /* LaunchScreen.storyboard */ = {
-			isa = PBXVariantGroup;
-			children = (
-				60F5535628CCEF3C0048D7C6 /* Base */,
-			);
-			name = LaunchScreen.storyboard;
-			sourceTree = "<group>";
-		};
-/* End PBXVariantGroup section */
 
 /* Begin XCBuildConfiguration section */
 		60F5535928CCEF3C0048D7C6 /* Debug */ = {
@@ -364,7 +444,6 @@
 				INFOPLIST_FILE = Lalafo/Info.plist;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
-				INFOPLIST_KEY_UIMainStoryboardFile = Main;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				LD_RUNPATH_SEARCH_PATHS = (
@@ -393,7 +472,6 @@
 				INFOPLIST_FILE = Lalafo/Info.plist;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
-				INFOPLIST_KEY_UIMainStoryboardFile = Main;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				LD_RUNPATH_SEARCH_PATHS = (
