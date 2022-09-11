@@ -25,7 +25,7 @@ class HomeViewController: UIViewController {
     private lazy var contentView: UIView = {
         let view = UIView()
         view.frame.size = contentSize
-        view.backgroundColor = .white
+        view.backgroundColor = UIColor.customBG
         return view
     }()
     
@@ -34,15 +34,13 @@ class HomeViewController: UIViewController {
         let scrollV = UIScrollView()
         scrollV.contentSize = contentSize
         scrollV.frame = view.bounds
-        scrollV.backgroundColor = .white
+        scrollV.backgroundColor = UIColor.customBG
         return scrollV
     }()
-    
     
     private lazy var searchBar: UISearchBar = {
         let searchB = UISearchBar()
         searchB.backgroundColor = .white
-        searchB.searchTextField.leftView?.tintColor = .black
         searchB.autocorrectionType = .no
         searchB.backgroundImage = UIImage()
         searchB.searchTextField.backgroundColor = .white
@@ -50,8 +48,6 @@ class HomeViewController: UIViewController {
         searchB.layer.masksToBounds = true
         searchB.placeholder = "Search"
         searchB.searchTextField.textColor = .black
-        searchB.layer.borderWidth = 0.4
-        searchB.layer.borderColor = UIColor.black.cgColor
         return searchB
     }()
     
