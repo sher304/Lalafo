@@ -31,7 +31,7 @@ class CategoryCell: UICollectionViewCell{
         setupConstraints()
     }
     
-    func setupConstraints(){
+    private func setupConstraints(){
         contentView.backgroundColor = .white
         
         contentView.addSubview(categoryImage)
