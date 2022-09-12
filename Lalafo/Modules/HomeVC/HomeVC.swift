@@ -163,7 +163,7 @@ class HomeViewController: UIViewController {
             make.leading.equalTo(18)
             make.trailing.equalToSuperview()
             make.top.equalTo(balancedCartView.snp.bottom).offset(40)
-            make.height.equalTo(80)
+            make.height.equalTo(120)
         }
     }
 }
@@ -176,8 +176,15 @@ extension HomeViewController: UICollectionViewDelegateFlowLayout, UICollectionVi
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         guard let cell = collectionView.dequeueReusableCell(withReuseIdentifier: CategoryCell.identifier, for: indexPath) as? CategoryCell else { return CategoryCell()}
         
+        cell.layer.cornerRadius = 14
+        cell.layer.masksToBounds = true
         return cell
     }
+    
+    func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
+        return CGSize(width: self.categoryCollection.frame.width / 4.8, height: self.categoryCollection.frame.height)
+    }
+    
 }
 
 extension HomeViewController: HomeView{
