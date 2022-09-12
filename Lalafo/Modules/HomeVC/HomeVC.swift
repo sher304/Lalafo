@@ -219,7 +219,11 @@ extension HomeViewController: UICollectionViewDelegateFlowLayout, UICollectionVi
     
     // Distance Between Item Cells
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, minimumLineSpacingForSectionAt section: Int) -> CGFloat {
-        return 20
+        if collectionView == productCollection{
+            return 20
+        }else{
+            return 10
+        }
     }
     
 }
