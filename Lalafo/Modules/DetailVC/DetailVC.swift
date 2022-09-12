@@ -52,10 +52,39 @@ class DetailViewController: UIViewController {
         collectionV.register(ProductDetailCell.self, forCellWithReuseIdentifier: ProductDetailCell.identifier)
         collectionV.delegate = self
         collectionV.dataSource = self
-        collectionV.backgroundColor = .green
+        collectionV.backgroundColor = .customBG
         collectionV.showsHorizontalScrollIndicator = false
         collectionV.isPagingEnabled = true
         return collectionV
+    }()
+    
+    private lazy var contentView: UIView = {
+        let view = UIView()
+        view.backgroundColor = .white
+        view.layer.maskedCorners = [.layerMaxXMinYCorner, .layerMinXMinYCorner]
+        view.layer.masksToBounds = true
+        view.layer.cornerRadius = 60
+        return view
+    }()
+    
+    private lazy var productTitle: UILabel = {
+        let label = UILabel()
+        label.text = "Jordan Zoom Separate PF - Basketball Shoes"
+        label.textColor = .black
+        label.font = .systemFont(ofSize: 19, weight: .semibold)
+        label.numberOfLines = 0
+        return label
+    }()
+    
+    private lazy var buyButton: UIButton = {
+        let button = UIButton(type: .system)
+        button.setTitle("$12.52", for: .normal)
+        button.setTitleColor(.white, for: .normal)
+        button.titleLabel?.font = .systemFont(ofSize: 18, weight: .regular)
+        button.backgroundColor = .orange
+        button.layer.cornerRadius = 15
+        button.layer.masksToBounds = true
+        return button
     }()
     
     override func viewDidLoad() {
@@ -93,6 +122,28 @@ class DetailViewController: UIViewController {
             make.top.equalTo(productScreen.snp.bottom).offset(10)
             make.height.equalTo(340)
             make.leading.trailing.equalToSuperview()
+        }
+        
+        view.addSubview(contentView)
+        contentView.snp.makeConstraints { make in
+            make.leading.trailing.bottom.equalToSuperview()
+            make.top.equalTo(productImage.snp.bottom)
+        }
+        
+        contentView.addSubview(productTitle)
+        productTitle.snp.makeConstraints { make in
+            make.leading.equalTo(35)
+            make.top.equalTo(20)
+            make.width.equalTo(220)
+            make.height.equalTo(70)
+        }
+        
+        contentView.addSubview(buyButton)
+        buyButton.snp.makeConstraints { make in
+            make.trailing.equalTo(-25)
+            make.height.equalTo(45)
+            make.leading.equalTo(productTitle.snp.trailing).offset(10)
+            make.centerY.equalTo(productTitle)
         }
     }
 }
