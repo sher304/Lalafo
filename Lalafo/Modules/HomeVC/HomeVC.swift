@@ -19,7 +19,7 @@ class HomeViewController: UIViewController {
     var presenter: HomePresenterService!
     
     //MARK: Content Size
-    private lazy var contentSize = CGSize(width: view.frame.width, height: view.frame.height + 360)
+    private lazy var contentSize = CGSize(width: view.frame.width, height: view.frame.height + 20)
     
     //MARK: Content View
     private lazy var contentView: UIView = {
@@ -105,6 +105,19 @@ class HomeViewController: UIViewController {
         return collectionV
     }()
     
+    private lazy var productCollection: UICollectionView = {
+        let layout = UICollectionViewFlowLayout()
+        layout.scrollDirection = .horizontal
+        
+        let collectionV = UICollectionView(frame: .zero, collectionViewLayout: layout)
+        collectionV.delegate = self
+        collectionV.dataSource = self
+        collectionV.register(ProductCell.self, forCellWithReuseIdentifier: ProductCell.identifier)
+        collectionV.showsHorizontalScrollIndicator = false
+        collectionV.backgroundColor = .customBG
+        return collectionV
+    }()
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         setupView()
@@ -165,6 +178,14 @@ class HomeViewController: UIViewController {
             make.top.equalTo(balancedCartView.snp.bottom).offset(40)
             make.height.equalTo(120)
         }
+        
+        contentView.addSubview(productCollection)
+        productCollection.snp.makeConstraints { make in
+            make.trailing.equalToSuperview()
+            make.leading.equalTo(18)
+            make.height.equalTo(250)
+            make.top.equalTo(categoryCollection.snp.bottom).offset(30)
+        }
     }
 }
 
@@ -174,15 +195,31 @@ extension HomeViewController: UICollectionViewDelegateFlowLayout, UICollectionVi
     }
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
-        guard let cell = collectionView.dequeueReusableCell(withReuseIdentifier: CategoryCell.identifier, for: indexPath) as? CategoryCell else { return CategoryCell()}
-        
-        cell.layer.cornerRadius = 14
-        cell.layer.masksToBounds = true
-        return cell
+        if collectionView == categoryCollection{
+            guard let cell = collectionView.dequeueReusableCell(withReuseIdentifier: CategoryCell.identifier, for: indexPath) as? CategoryCell else { return CategoryCell()}
+            
+            cell.layer.cornerRadius = 14
+            cell.layer.masksToBounds = true
+            return cell
+        }else{
+            guard let cell = collectionView.dequeueReusableCell(withReuseIdentifier: ProductCell.identifier, for: indexPath) as? ProductCell else { return ProductCell()}
+            cell.layer.cornerRadius = 14
+            cell.layer.masksToBounds = true
+            return cell
+        }
     }
     
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
-        return CGSize(width: self.categoryCollection.frame.width / 4.8, height: self.categoryCollection.frame.height)
+        if collectionView == categoryCollection{
+            return CGSize(width: self.categoryCollection.frame.width / 4.8, height: self.categoryCollection.frame.height)
+        }else{
+            return CGSize(width: self.productCollection.frame.width / 2, height: self.productCollection.frame.height)
+        }
+    }
+    
+    // Distance Between Item Cells
+    func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, minimumLineSpacingForSectionAt section: Int) -> CGFloat {
+        return 20
     }
     
 }
