@@ -92,6 +92,19 @@ class HomeViewController: UIViewController {
         return label
     }()
     
+    private lazy var categoryCollection: UICollectionView = {
+        let layout = UICollectionViewFlowLayout()
+        layout.scrollDirection = .horizontal
+        
+        let collectionV = UICollectionView(frame: .zero, collectionViewLayout: layout)
+        collectionV.register(CategoryCell.self, forCellWithReuseIdentifier: CategoryCell.identifier)
+        collectionV.delegate = self
+        collectionV.dataSource = self
+        collectionV.backgroundColor = .customBG
+        collectionV.showsHorizontalScrollIndicator = false
+        return collectionV
+    }()
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         setupView()
@@ -144,10 +157,37 @@ class HomeViewController: UIViewController {
             make.trailing.equalTo(-18)
             make.centerY.equalTo(cashLabel)
         }
+        
+        contentView.addSubview(categoryCollection)
+        categoryCollection.snp.makeConstraints { make in
+            make.leading.equalTo(18)
+            make.trailing.equalToSuperview()
+            make.top.equalTo(balancedCartView.snp.bottom).offset(40)
+            make.height.equalTo(120)
+        }
     }
 }
 
+extension HomeViewController: UICollectionViewDelegateFlowLayout, UICollectionViewDataSource{
+    func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
+        return 14
+    }
+    
+    func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
+        guard let cell = collectionView.dequeueReusableCell(withReuseIdentifier: CategoryCell.identifier, for: indexPath) as? CategoryCell else { return CategoryCell()}
+        
+        cell.layer.cornerRadius = 14
+        cell.layer.masksToBounds = true
+        return cell
+    }
+    
+    func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
+        return CGSize(width: self.categoryCollection.frame.width / 4.8, height: self.categoryCollection.frame.height)
+    }
+    
+}
 
 extension HomeViewController: HomeView{
     
 }
+
