@@ -17,6 +17,23 @@ class DetailViewController: UIViewController {
     
     var presenter: DetailPresenterService!
     
+    private lazy var contentSize = CGSize(width: view.frame.width, height: view.frame.height + 120)
+    
+    private lazy var scrollV: UIScrollView = {
+        let scrollV = UIScrollView()
+        scrollV.contentSize = contentSize
+        scrollV.frame = view.bounds
+        scrollV.backgroundColor = .customBG
+        return scrollV
+    }()
+    
+    private lazy var parentContentView: UIView = {
+        let view = UIView()
+        view.frame.size = contentSize
+        view.backgroundColor = .customBG
+        return view
+    }()
+    
     private lazy var backButton: UIButton = {
         let button = UIButton(type: .system)
         button.setImage(UIImage(systemName: "arrowshape.turn.up.backward"), for: .normal)
@@ -108,16 +125,47 @@ class DetailViewController: UIViewController {
         return textView
     }()
     
+    private lazy var addToCartParentView: UIView = {
+        let view = UIView()
+        view.backgroundColor = .white
+        view.layer.cornerRadius = 22
+        view.layer.masksToBounds = true
+        return view
+    }()
+    
+    private lazy var subtractAmount: UIButton = {
+        let button = UIButton(type: .system)
+        button.setTitle("-", for: .normal)
+        button.backgroundColor = .customDark
+        button.layer.cornerRadius = 40 / 2
+        button.tintColor = .white
+        return button
+    }()
+    
+    private lazy var addAmount: UIButton = {
+        let button = UIButton(type: .system)
+        button.setTitle("+", for: .normal)
+        button.backgroundColor = .customDark
+        button.layer.cornerRadius = 40 / 2
+        button.tintColor = .white
+        return button
+    }()
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        setupViews()
+    }
+    
+    private func setupViews(){
+        view.addSubview(scrollV)
+        scrollV.addSubview(parentContentView)
         setupConstraints()
     }
     
     private func setupConstraints(){
         view.backgroundColor = .customBG
         
-        view.addSubview(backButton)
+        parentContentView.addSubview(backButton)
         backButton.snp.makeConstraints { make in
             make.leading.equalTo(25)
             make.width.equalTo(30)
@@ -125,13 +173,13 @@ class DetailViewController: UIViewController {
             make.top.equalTo(60)
         }
         
-        view.addSubview(productScreen)
+        parentContentView.addSubview(productScreen)
         productScreen.snp.makeConstraints { make in
             make.centerY.equalTo(backButton)
             make.centerX.equalToSuperview()
         }
         
-        view.addSubview(favButton)
+        parentContentView.addSubview(favButton)
         favButton.snp.makeConstraints { make in
             make.trailing.equalTo(-25)
             make.width.equalTo(30)
@@ -139,17 +187,18 @@ class DetailViewController: UIViewController {
             make.centerY.equalTo(productScreen)
         }
         
-        view.addSubview(productImage)
+        parentContentView.addSubview(productImage)
         productImage.snp.makeConstraints { make in
             make.top.equalTo(productScreen.snp.bottom).offset(10)
             make.height.equalTo(340)
             make.leading.trailing.equalToSuperview()
         }
         
-        view.addSubview(contentView)
+        parentContentView.addSubview(contentView)
         contentView.snp.makeConstraints { make in
             make.leading.trailing.bottom.equalToSuperview()
-            make.top.equalTo(productImage.snp.bottom)
+            make.top.equalTo(productImage.snp.bottom).offset(120)
+            make.bottom.equalToSuperview()
         }
         
         contentView.addSubview(productTitle)
@@ -174,6 +223,28 @@ class DetailViewController: UIViewController {
             make.trailing.equalTo(-35)
             make.top.equalTo(productTitle.snp.bottom).offset(15)
         }
+        
+        view.addSubview(addToCartParentView)
+        addToCartParentView.snp.makeConstraints { make in
+            make.leading.trailing.equalToSuperview()
+            make.height.height.equalTo(75)
+            make.bottom.equalToSuperview()
+        }
+        
+        addToCartParentView.addSubview(subtractAmount)
+        subtractAmount.snp.makeConstraints { make in
+            make.leading.equalTo(35)
+            make.centerY.equalToSuperview()
+            make.height.width.equalTo(40)
+        }
+        
+        addToCartParentView.addSubview(addAmount)
+        addAmount.snp.makeConstraints { make in
+            make.leading.equalTo(subtractAmount.snp.trailing).offset(40)
+            make.centerY.equalToSuperview()
+            make.height.width.equalTo(40)
+        }
+        
     }
 }
 
