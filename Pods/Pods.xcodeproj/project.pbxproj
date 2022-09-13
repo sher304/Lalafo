@@ -239,7 +239,7 @@
 		2383038D4214541D2FA0231693CAB715 /* Storage.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = Storage.swift; path = Sources/Cache/Storage.swift; sourceTree = "<group>"; };
 		24C0BAC48473276B20BC0A50DBCCBC1E /* MatchPreprocessor.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = MatchPreprocessor.swift; path = Sources/Preprocessors/MatchPreprocessor.swift; sourceTree = "<group>"; };
 		24E8E2B6F2E1FFDA044BDBFF117E2726 /* SnapKit-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "SnapKit-dummy.m"; sourceTree = "<group>"; };
-		252E62A5690CEA9D08389126243F37AE /* Pods-Lalafo */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; name = "Pods-Lalafo"; path = Pods_Lalafo.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		252E62A5690CEA9D08389126243F37AE /* Pods_Lalafo.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Lalafo.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		259DDFCBB25F82294EB7EF46285654C8 /* ReadMoreTextView.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = ReadMoreTextView.debug.xcconfig; sourceTree = "<group>"; };
 		283BACA7D63728F766B6466D192CACB6 /* Kingfisher-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "Kingfisher-dummy.m"; sourceTree = "<group>"; };
 		292184E71BE7BE990732385BFDBB1AD2 /* SessionDelegate.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = SessionDelegate.swift; path = Sources/Networking/SessionDelegate.swift; sourceTree = "<group>"; };
@@ -309,7 +309,7 @@
 		7323D7331B9E374ADA4C953DCB5F5EFD /* Kingfisher-prefix.pch */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "Kingfisher-prefix.pch"; sourceTree = "<group>"; };
 		743309696A0A44F4A546A97A154D72D6 /* NSButton+Kingfisher.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = "NSButton+Kingfisher.swift"; path = "Sources/Extensions/NSButton+Kingfisher.swift"; sourceTree = "<group>"; };
 		754EFCCDCA029CD48829DFB1F4D4FEC0 /* ImageFormat.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = ImageFormat.swift; path = Sources/Image/ImageFormat.swift; sourceTree = "<group>"; };
-		7C7DAFE37616C6BE604B63C7230F0F53 /* ReadMoreTextView */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; name = ReadMoreTextView; path = ReadMoreTextView.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		7C7DAFE37616C6BE604B63C7230F0F53 /* ReadMoreTextView.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = ReadMoreTextView.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		7CC464F3D391E8C9BD5AC1C17A734B07 /* HeroModifier.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = HeroModifier.swift; path = Sources/HeroModifier.swift; sourceTree = "<group>"; };
 		7EDE91A36D8092AF6DDBDF05FC954B51 /* SnapKit-umbrella.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "SnapKit-umbrella.h"; sourceTree = "<group>"; };
 		7FB4352BA01BD7D66D5CADFC791BDCF5 /* Kingfisher.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = Kingfisher.release.xcconfig; sourceTree = "<group>"; };
@@ -335,7 +335,7 @@
 		994B0D0AE7A71FC653D58D1607E6CC3E /* HeroProgressRunner.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = HeroProgressRunner.swift; path = Sources/Transition/HeroProgressRunner.swift; sourceTree = "<group>"; };
 		9AF1C5E461D0AF70D781C6F7E5511B27 /* Locale+Hero.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = "Locale+Hero.swift"; path = "Sources/Extensions/Locale+Hero.swift"; sourceTree = "<group>"; };
 		9CAE9972BBAC7F482AF4A66DACF3D16D /* RetryStrategy.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = RetryStrategy.swift; path = Sources/Networking/RetryStrategy.swift; sourceTree = "<group>"; };
-		9D940727FF8FB9C785EB98E56350EF41 /* Podfile */ = {isa = PBXFileReference; explicitFileType = text.script.ruby; includeInIndex = 1; indentWidth = 2; lastKnownFileType = text; name = Podfile; path = ../Podfile; sourceTree = SOURCE_ROOT; tabWidth = 2; xcLanguageSpecificationIdentifier = xcode.lang.ruby; };
+		9D940727FF8FB9C785EB98E56350EF41 /* Podfile */ = {isa = PBXFileReference; explicitFileType = text.script.ruby; includeInIndex = 1; indentWidth = 2; name = Podfile; path = ../Podfile; sourceTree = SOURCE_ROOT; tabWidth = 2; xcLanguageSpecificationIdentifier = xcode.lang.ruby; };
 		9E0442FE807F9D57EB1C3C7B52EBF3AC /* ImageBinder.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = ImageBinder.swift; path = Sources/SwiftUI/ImageBinder.swift; sourceTree = "<group>"; };
 		9E04B8BCA7B60683AC30D166B9689311 /* UIKit+Hero.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = "UIKit+Hero.swift"; path = "Sources/Extensions/UIKit+Hero.swift"; sourceTree = "<group>"; };
 		9E11E5657D78B4969ED5705C432654F6 /* LayoutConstraint.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = LayoutConstraint.swift; path = Sources/LayoutConstraint.swift; sourceTree = "<group>"; };
@@ -542,7 +542,6 @@
 				E21B55A2016DA81C7BCCEEF59E2BABAA /* UITextView+Extensions.swift */,
 				1A0FA1452E53AA8A8B0DCDF0EAD40BC3 /* Support Files */,
 			);
-			name = ReadMoreTextView;
 			path = ReadMoreTextView;
 			sourceTree = "<group>";
 		};
@@ -551,8 +550,8 @@
 			children = (
 				13E778F4B833EE5D7ABE882406A8215E /* Hero */,
 				C3F44C782D64D7EB20B61CE3844EBFAD /* Kingfisher */,
-				252E62A5690CEA9D08389126243F37AE /* Pods-Lalafo */,
-				7C7DAFE37616C6BE604B63C7230F0F53 /* ReadMoreTextView */,
+				252E62A5690CEA9D08389126243F37AE /* Pods_Lalafo.framework */,
+				7C7DAFE37616C6BE604B63C7230F0F53 /* ReadMoreTextView.framework */,
 				979486118B3E90C08386079D57962701 /* SnapKit */,
 			);
 			name = Products;
@@ -624,7 +623,6 @@
 				F469CB131C4D77EEB7A666D7819FF4EB /* WKInterfaceImage+Kingfisher.swift */,
 				2FD807B56F242136068CA296F0A7923A /* Support Files */,
 			);
-			name = Kingfisher;
 			path = Kingfisher;
 			sourceTree = "<group>";
 		};
@@ -726,7 +724,6 @@
 				53531BA67EFBD6E294C0EE3FE6CC8DF6 /* UILayoutSupport+Extensions.swift */,
 				879311A7AE23ABDD1B733FD953345A81 /* Support Files */,
 			);
-			name = SnapKit;
 			path = SnapKit;
 			sourceTree = "<group>";
 		};
@@ -784,7 +781,6 @@
 				18A4FEAFD3FD5AE5233D045F3D267B87 /* UIViewController+Hero.swift */,
 				0849AE83AB1D33EB33D20FA5B44D0141 /* Support Files */,
 			);
-			name = Hero;
 			path = Hero;
 			sourceTree = "<group>";
 		};
@@ -849,7 +845,7 @@
 			);
 			name = ReadMoreTextView;
 			productName = ReadMoreTextView;
-			productReference = 7C7DAFE37616C6BE604B63C7230F0F53 /* ReadMoreTextView */;
+			productReference = 7C7DAFE37616C6BE604B63C7230F0F53 /* ReadMoreTextView.framework */;
 			productType = "com.apple.product-type.framework";
 		};
 		19622742EBA51E823D6DAE3F8CDBFAD4 /* SnapKit */ = {
@@ -889,7 +885,7 @@
 			);
 			name = "Pods-Lalafo";
 			productName = Pods_Lalafo;
-			productReference = 252E62A5690CEA9D08389126243F37AE /* Pods-Lalafo */;
+			productReference = 252E62A5690CEA9D08389126243F37AE /* Pods_Lalafo.framework */;
 			productType = "com.apple.product-type.framework";
 		};
 		B3893AEA4D7DBB9A086E889FC469132D /* Hero */ = {
