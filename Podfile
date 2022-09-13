@@ -9,4 +9,5 @@ target 'Lalafo' do
 	pod 'SnapKit'
 	pod 'Kingfisher'
 	pod 'Hero'
+	pod 'ReadMoreTextView'
 end

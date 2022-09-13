@@ -1,24 +1,28 @@
 PODS:
   - Hero (1.6.2)
   - Kingfisher (7.3.2)
+  - ReadMoreTextView (3.0.1)
   - SnapKit (5.6.0)
 
 DEPENDENCIES:
   - Hero
   - Kingfisher
+  - ReadMoreTextView
   - SnapKit
 
 SPEC REPOS:
   trunk:
     - Hero
     - Kingfisher
+    - ReadMoreTextView
     - SnapKit
 
 SPEC CHECKSUMS:
   Hero: c69009dbc9e2f0472e081adc644dba05fcedae72
   Kingfisher: 0086ad83719761ba9b2cdaf6ef4d5b4878cbae23
+  ReadMoreTextView: 19147adf93abce6d7271e14031a00303fe28720d
   SnapKit: e01d52ebb8ddbc333eefe2132acf85c8227d9c25
 
-PODFILE CHECKSUM: 2c87c0d5eefb9199421ed81aabf03d2f6319be72
+PODFILE CHECKSUM: 6dcf4b1907b82cb2e92f03ad63d28e90d71746df
 
 COCOAPODS: 1.11.3
