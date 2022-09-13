@@ -55,8 +55,6 @@ class ProductCell: UICollectionViewCell {
     }
     
     private func setupConstraints(){
-//        contentView.backgroundColor = .customBG
-        
         contentView.addSubview(productImage)
         productImage.snp.makeConstraints { make in
             make.leading.trailing.top.equalToSuperview()
