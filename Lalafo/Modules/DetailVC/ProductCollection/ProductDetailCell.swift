@@ -34,7 +34,5 @@ class ProductDetailCell: UICollectionViewCell{
         productImage.snp.makeConstraints { make in
             make.edges.equalToSuperview()
         }
-        
     }
-    
 }
