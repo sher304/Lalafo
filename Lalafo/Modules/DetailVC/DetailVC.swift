@@ -6,6 +6,7 @@
 //
 
 import UIKit
+import ReadMoreTextView
 import SnapKit
 
 protocol DetailView: AnyObject{
@@ -60,7 +61,7 @@ class DetailViewController: UIViewController {
     
     private lazy var contentView: UIView = {
         let view = UIView()
-        view.backgroundColor = .white
+        view.backgroundColor = .customDark
         view.layer.maskedCorners = [.layerMaxXMinYCorner, .layerMinXMinYCorner]
         view.layer.masksToBounds = true
         view.layer.cornerRadius = 60
@@ -70,7 +71,7 @@ class DetailViewController: UIViewController {
     private lazy var productTitle: UILabel = {
         let label = UILabel()
         label.text = "Jordan Zoom Separate PF - Basketball Shoes"
-        label.textColor = .black
+        label.textColor = .white
         label.font = .systemFont(ofSize: 19, weight: .semibold)
         label.numberOfLines = 0
         return label
@@ -81,11 +82,32 @@ class DetailViewController: UIViewController {
         button.setTitle("$12.52", for: .normal)
         button.setTitleColor(.white, for: .normal)
         button.titleLabel?.font = .systemFont(ofSize: 18, weight: .regular)
-        button.backgroundColor = .orange
+        button.backgroundColor = .customOrage
         button.layer.cornerRadius = 15
         button.layer.masksToBounds = true
         return button
     }()
+    
+    private lazy var descriptionLabel: ReadMoreTextView = {
+        let textView = ReadMoreTextView()
+        textView.text = "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum."
+
+        textView.attributedReadLessText = NSAttributedString(string: " Read less")
+        let readMoreTextAttributes: [NSAttributedString.Key: Any] = [
+            NSAttributedString.Key.foregroundColor: UIColor.white,
+            NSAttributedString.Key.font: UIFont.boldSystemFont(ofSize: 15)
+        ]
+        let readLessTextAttributes = [
+            NSAttributedString.Key.foregroundColor: UIColor.white,
+            NSAttributedString.Key.font: UIFont.italicSystemFont(ofSize: 15)
+        ]
+        textView.maximumNumberOfLines = 4
+        textView.attributedReadMoreText = NSAttributedString(string: "... Read more", attributes: readMoreTextAttributes)
+        textView.attributedReadLessText = NSAttributedString(string: " Read less", attributes: readLessTextAttributes)
+        textView.shouldTrim = true
+        return textView
+    }()
+    
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -144,6 +166,13 @@ class DetailViewController: UIViewController {
             make.height.equalTo(45)
             make.leading.equalTo(productTitle.snp.trailing).offset(10)
             make.centerY.equalTo(productTitle)
+        }
+        
+        contentView.addSubview(descriptionLabel)
+        descriptionLabel.snp.makeConstraints { make in
+            make.leading.equalTo(35)
+            make.trailing.equalTo(-35)
+            make.top.equalTo(productTitle.snp.bottom).offset(15)
         }
     }
 }
