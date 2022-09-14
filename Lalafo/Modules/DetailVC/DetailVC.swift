@@ -99,7 +99,7 @@ class DetailViewController: UIViewController {
         button.setTitle("$12.52", for: .normal)
         button.setTitleColor(.white, for: .normal)
         button.titleLabel?.font = .systemFont(ofSize: 18, weight: .regular)
-        button.backgroundColor = .customOrage
+        button.backgroundColor = .customOrange
         button.layer.cornerRadius = 15
         button.layer.masksToBounds = true
         return button
@@ -108,7 +108,7 @@ class DetailViewController: UIViewController {
     private lazy var descriptionLabel: ReadMoreTextView = {
         let textView = ReadMoreTextView()
         textView.text = "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum."
-
+        
         textView.attributedReadLessText = NSAttributedString(string: " Read less")
         let readMoreTextAttributes: [NSAttributedString.Key: Any] = [
             NSAttributedString.Key.foregroundColor: UIColor.white,
@@ -148,6 +148,23 @@ class DetailViewController: UIViewController {
         button.backgroundColor = .customDark
         button.layer.cornerRadius = 40 / 2
         button.tintColor = .white
+        return button
+    }()
+    
+    private lazy var amountLabel: UILabel = {
+        let label = UILabel()
+        label.text = "1"
+        label.textColor = .black
+        return label
+    }()
+    
+    private lazy var addToCartButton: UIButton = {
+        let button = UIButton(type: .system)
+        button.setTitle("Buy", for: .normal)
+        button.setTitleColor(.white, for: .normal)
+        button.backgroundColor = .customOrange
+        button.layer.cornerRadius = 14
+        button.titleLabel?.font = .systemFont(ofSize: 14, weight: .semibold)
         return button
     }()
     
@@ -243,6 +260,21 @@ class DetailViewController: UIViewController {
             make.leading.equalTo(subtractAmount.snp.trailing).offset(40)
             make.centerY.equalToSuperview()
             make.height.width.equalTo(40)
+        }
+        
+        addToCartParentView.addSubview(amountLabel)
+        amountLabel.snp.makeConstraints { make in
+            make.centerY.equalToSuperview()
+            make.leading.equalTo(subtractAmount.snp.trailing).offset(15)
+        }
+        
+        addToCartParentView.addSubview(addToCartButton)
+        addToCartButton.snp.makeConstraints { make in
+            make.trailing.equalTo(-50)
+            make.leading.equalTo(addAmount.snp.trailing).offset(70)
+            make.bottom.equalTo(-15)
+            make.top.equalTo(15)
+            make.centerY.equalToSuperview()
         }
         
     }
