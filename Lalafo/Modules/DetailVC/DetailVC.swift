@@ -271,12 +271,11 @@ class DetailViewController: UIViewController {
         addToCartParentView.addSubview(addToCartButton)
         addToCartButton.snp.makeConstraints { make in
             make.trailing.equalTo(-50)
-            make.leading.equalTo(addAmount.snp.trailing).offset(70)
+            make.leading.equalTo(addAmount.snp.trailing).offset(30)
             make.bottom.equalTo(-15)
             make.top.equalTo(15)
             make.centerY.equalToSuperview()
-        }
-        
+        }   
     }
 }
 
