@@ -23,7 +23,6 @@ class DetailPresenter: DetailPresenterProtocol{
     }
     
     func viewDidLoad(){
-        let number = self.interactor.getRandomNum()
-        view?.showNumber(number: number ?? 0)
+        
     }
 }

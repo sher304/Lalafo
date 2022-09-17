@@ -9,8 +9,7 @@ import UIKit
 import SnapKit
 
 protocol HomeView: AnyObject{
-    func showDate(date: String)
-    func showNetwork(number: String)
+    
 }
 
 class HomeViewController: UIViewController {
@@ -236,22 +235,13 @@ extension HomeViewController: UICollectionViewDelegateFlowLayout, UICollectionVi
     }
     
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
-        presenter?.didTapped()
+        if collectionView == productCollection{
+            presenter?.didTapped()
+        }
     }
     
 }
 
 extension HomeViewController: HomeView{
-    func showDate(date: String) {
-        DispatchQueue.main.async { [self] in
-            balanceLabel.text = date
-        }
-    }
-    
-    func showNetwork(number: String) {
-        DispatchQueue.main.async { [self] in
-            visaLabel.text = number
-        }
-    }
 }
 

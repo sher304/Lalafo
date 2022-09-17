@@ -40,6 +40,7 @@ class DetailViewController: UIViewController {
         button.tintColor = .black
         button.contentHorizontalAlignment = .fill
         button.contentVerticalAlignment = .fill
+        button.addTarget(self, action: #selector(didBackTapped), for: .touchUpInside)
         return button
     }()
     
@@ -277,6 +278,10 @@ class DetailViewController: UIViewController {
             make.top.equalTo(15)
             make.centerY.equalToSuperview()
         }   
+    }
+    
+    @objc func didBackTapped(){
+        dismiss(animated: true)
     }
 }
 
