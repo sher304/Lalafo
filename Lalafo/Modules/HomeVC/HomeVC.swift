@@ -9,14 +9,15 @@ import UIKit
 import SnapKit
 
 protocol HomeView: AnyObject{
-    
+    func showDate(date: String)
+    func showNetwork(number: String)
 }
 
 class HomeViewController: UIViewController {
     
     
     //MARK: Link With Presenter
-    var presenter: HomePresenterService!
+    var presenter: HomePresenterProtocol?
     
     //MARK: Content Size
     private lazy var contentSize = CGSize(width: view.frame.width, height: view.frame.height + 20)
@@ -81,6 +82,8 @@ class HomeViewController: UIViewController {
         label.text = "$230.0"
         label.textColor = .white
         label.font = .systemFont(ofSize: 25, weight: .semibold)
+        label.isUserInteractionEnabled = true
+        label.addGestureRecognizer(UIGestureRecognizer(target: self, action: #selector(didTapped)))
         return label
     }()
     
@@ -120,6 +123,7 @@ class HomeViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        presenter?.viewDidLoad()
         setupView()
     }
     
@@ -187,6 +191,11 @@ class HomeViewController: UIViewController {
             make.top.equalTo(categoryCollection.snp.bottom).offset(30)
         }
     }
+    
+    @objc func didTapped(){
+        print("tapped")
+        presenter?.didTapped()
+    }
 }
 
 extension HomeViewController: UICollectionViewDelegateFlowLayout, UICollectionViewDataSource{
@@ -226,9 +235,23 @@ extension HomeViewController: UICollectionViewDelegateFlowLayout, UICollectionVi
         }
     }
     
+    func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
+        presenter?.didTapped()
+    }
+    
 }
 
 extension HomeViewController: HomeView{
+    func showDate(date: String) {
+        DispatchQueue.main.async { [self] in
+            balanceLabel.text = date
+        }
+    }
     
+    func showNetwork(number: String) {
+        DispatchQueue.main.async { [self] in
+            visaLabel.text = number
+        }
+    }
 }
 
