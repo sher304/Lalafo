@@ -81,8 +81,6 @@ class HomeViewController: UIViewController {
         label.text = "$230.0"
         label.textColor = .white
         label.font = .systemFont(ofSize: 25, weight: .semibold)
-        label.isUserInteractionEnabled = true
-        label.addGestureRecognizer(UIGestureRecognizer(target: self, action: #selector(didTapped)))
         return label
     }()
     

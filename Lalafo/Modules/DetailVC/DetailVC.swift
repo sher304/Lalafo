@@ -103,27 +103,37 @@ class DetailViewController: UIViewController {
         button.backgroundColor = .customOrange
         button.layer.cornerRadius = 15
         button.layer.masksToBounds = true
+        button.addTarget(self, action: #selector(didTapped), for: .touchUpInside)
         return button
     }()
     
-    private lazy var descriptionLabel: ReadMoreTextView = {
-        let textView = ReadMoreTextView()
-        textView.text = "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum."
-        
-        textView.attributedReadLessText = NSAttributedString(string: " Read less")
-        let readMoreTextAttributes: [NSAttributedString.Key: Any] = [
-            NSAttributedString.Key.foregroundColor: UIColor.white,
-            NSAttributedString.Key.font: UIFont.boldSystemFont(ofSize: 15)
-        ]
-        let readLessTextAttributes = [
-            NSAttributedString.Key.foregroundColor: UIColor.white,
-            NSAttributedString.Key.font: UIFont.italicSystemFont(ofSize: 15)
-        ]
-        textView.maximumNumberOfLines = 4
-        textView.attributedReadMoreText = NSAttributedString(string: "... Read more", attributes: readMoreTextAttributes)
-        textView.attributedReadLessText = NSAttributedString(string: " Read less", attributes: readLessTextAttributes)
-        textView.shouldTrim = true
-        return textView
+    //    private lazy var descriptionLabel: ReadMoreTextView = {
+    //        let textView = ReadMoreTextView()
+    //        textView.text = "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum."
+    //
+    //        textView.attributedReadLessText = NSAttributedString(string: " Read less")
+    //        let readMoreTextAttributes: [NSAttributedString.Key: Any] = [
+    //            NSAttributedString.Key.foregroundColor: UIColor.white,
+    //            NSAttributedString.Key.font: UIFont.boldSystemFont(ofSize: 15)
+    //        ]
+    //        let readLessTextAttributes = [
+    //            NSAttributedString.Key.foregroundColor: UIColor.white,
+    //            NSAttributedString.Key.font: UIFont.italicSystemFont(ofSize: 15)
+    //        ]
+    //        textView.maximumNumberOfLines = 4
+    //        textView.attributedReadMoreText = NSAttributedString(string: "... Read more", attributes: readMoreTextAttributes)
+    //        textView.attributedReadLessText = NSAttributedString(string: " Read less", attributes: readLessTextAttributes)
+    //        textView.shouldTrim = true
+    //        return textView
+    //    }()
+    
+    private lazy var descriptionLabel: UILabel = {
+        let label = UILabel()
+        label.text = "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum."
+        label.numberOfLines = 0
+        label.isUserInteractionEnabled = true
+        label.addGestureRecognizer(UIGestureRecognizer(target: self, action: #selector(didTapped)))
+        return label
     }()
     
     private lazy var addToCartParentView: UIView = {
@@ -168,6 +178,8 @@ class DetailViewController: UIViewController {
         button.titleLabel?.font = .systemFont(ofSize: 14, weight: .semibold)
         return button
     }()
+    
+    var descriptionConstraint: Constraint?
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -241,6 +253,7 @@ class DetailViewController: UIViewController {
             make.leading.equalTo(35)
             make.trailing.equalTo(-35)
             make.top.equalTo(productTitle.snp.bottom).offset(15)
+            self.descriptionConstraint = make.height.equalTo(80).constraint
         }
         
         view.addSubview(addToCartParentView)
@@ -277,11 +290,31 @@ class DetailViewController: UIViewController {
             make.bottom.equalTo(-15)
             make.top.equalTo(15)
             make.centerY.equalToSuperview()
-        }   
+        }
     }
     
     @objc func didBackTapped(){
         dismiss(animated: true)
+    }
+    
+    @objc func didTapped(){
+        print("Tapped")
+        animateDescription()
+    }
+    
+    private func animateDescription(){
+        print("Tapped2")
+        UIView.animate(withDuration: 0.5) {
+            self.descriptionConstraint?.update(offset: 230)
+            self.view.layoutIfNeeded()
+        }
+    }
+    
+    private func closeDescriptionAnimate(){
+        UIView.animate(withDuration: 0.5) {
+            self.descriptionConstraint?.update(offset: 80)
+            self.view.layoutIfNeeded()
+        }
     }
 }
 
