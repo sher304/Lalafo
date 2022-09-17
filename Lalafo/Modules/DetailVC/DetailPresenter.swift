@@ -7,16 +7,23 @@
 
 import Foundation
 
-protocol DetailPresenterService{
+protocol DetailPresenterProtocol: AnyObject{
+    func viewDidLoad()
     
-    init(view: DetailView)
 }
 
-class DetailPresenter: DetailPresenterService{
+class DetailPresenter: DetailPresenterProtocol{
+    weak var view: DetailView?
+    var interactor: DetailInteractorProtocol
+    var router: DetailRouterProtocol
     
-    private weak var view: DetailView?
+    init(interactor: DetailInteractorProtocol, router: DetailRouterProtocol){
+        self.interactor = interactor
+        self.router = router
+    }
     
-    required init(view: DetailView) {
-        self.view = view
+    func viewDidLoad(){
+        let number = self.interactor.getRandomNum()
+        view?.showNumber(number: number ?? 0)
     }
 }

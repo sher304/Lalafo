@@ -10,12 +10,12 @@ import ReadMoreTextView
 import SnapKit
 
 protocol DetailView: AnyObject{
-    
+    func showNumber(number: Int)
 }
 
 class DetailViewController: UIViewController {
     
-    var presenter: DetailPresenterService!
+    var presenter: DetailPresenterProtocol?
     
     private lazy var contentSize = CGSize(width: view.frame.width, height: view.frame.height + 120)
     
@@ -171,6 +171,7 @@ class DetailViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         setupViews()
+        presenter?.viewDidLoad()
     }
     
     private func setupViews(){
@@ -296,7 +297,11 @@ extension DetailViewController: UICollectionViewDelegateFlowLayout, UICollection
 }
 
 extension DetailViewController: DetailView{
-    
+    func showNumber(number: Int){
+        DispatchQueue.main.async { [self] in
+            productTitle.text = number.description
+        }
+    }
 }
 
 
