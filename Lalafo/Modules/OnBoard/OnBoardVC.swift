@@ -42,6 +42,16 @@ class OnBoardViewController: UIViewController {
         return button
     }()
     
+    private lazy var loginAccount: UIButton = {
+        let button = UIButton(type: .system)
+        button.setTitle("Sign In", for: .normal)
+        button.setTitleColor(.customDark, for: .normal)
+        button.backgroundColor = .white
+        button.layer.cornerRadius = 14
+        button.layer.masksToBounds = true
+        return button
+    }()
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         setupConstraints()
@@ -71,6 +81,14 @@ class OnBoardViewController: UIViewController {
             make.trailing.equalTo(-25)
             make.height.equalTo(55)
             make.top.equalTo(descriptionLabel.snp.bottom).offset(130)
+        }
+        
+        view.addSubview(loginAccount)
+        loginAccount.snp.makeConstraints { make in
+            make.leading.equalTo(25)
+            make.trailing.equalTo(-25)
+            make.height.equalTo(55)
+            make.top.equalTo(regisetAccount.snp.bottom).offset(20)
         }
     }
 }
