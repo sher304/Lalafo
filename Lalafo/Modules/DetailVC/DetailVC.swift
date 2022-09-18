@@ -103,7 +103,6 @@ class DetailViewController: UIViewController {
         button.backgroundColor = .customOrange
         button.layer.cornerRadius = 15
         button.layer.masksToBounds = true
-        button.addTarget(self, action: #selector(didTapped), for: .touchUpInside)
         return button
     }()
     
@@ -112,7 +111,7 @@ class DetailViewController: UIViewController {
         label.text = "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum."
         label.numberOfLines = 0
         label.isUserInteractionEnabled = true
-        label.addGestureRecognizer(UIGestureRecognizer(target: self, action: #selector(didTapped)))
+        label.addGestureRecognizer(UITapGestureRecognizer(target: self, action: #selector(didDescriptionTapped)))
         return label
     }()
     
@@ -156,7 +155,6 @@ class DetailViewController: UIViewController {
         button.backgroundColor = .customOrange
         button.layer.cornerRadius = 14
         button.titleLabel?.font = .systemFont(ofSize: 14, weight: .semibold)
-        button.addTarget(self, action: #selector(didTapped), for: .touchUpInside)
         return button
     }()
     
@@ -278,12 +276,13 @@ class DetailViewController: UIViewController {
         dismiss(animated: true)
     }
     
-    @objc func didTapped(button: UIButton){
-        if button == buyButton{
-            print("Tapped")
+    var didTapped = true
+    @objc func didDescriptionTapped(button: UIButton){
+        if didTapped{
+            didTapped = false
             animateDescription()
         }else{
-            print("Tapped2")
+            didTapped = true
             closeDescriptionAnimate()
         }
         
