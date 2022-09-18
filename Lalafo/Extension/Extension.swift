@@ -18,4 +18,6 @@ extension UIColor{
     
     static let customOrange = UIColor(red: 236/255, green: 88/255, blue: 31/255, alpha: 1)
     
+    
+    static let customGrayTint = UIColor(red: 91/255, green: 88/255, blue: 89/255, alpha: 1)
 }
