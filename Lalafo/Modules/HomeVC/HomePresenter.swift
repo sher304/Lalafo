@@ -33,11 +33,11 @@ class HomePresenter: HomePresenterProtocol{
     }
     
     func didLoadNetwork(number: Int){
-        view?.showNetwork(number: number.description)
+        
     }
     
     func didLoadData(date: Date){
-        view?.showDate(date: date.description)
+        
     }
     
     func didTapped(){
