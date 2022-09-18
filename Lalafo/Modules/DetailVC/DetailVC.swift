@@ -17,7 +17,7 @@ class DetailViewController: UIViewController {
     
     var presenter: DetailPresenterProtocol?
     
-    private lazy var contentSize = CGSize(width: view.frame.width, height: view.frame.height + 120)
+    private lazy var contentSize = CGSize(width: view.frame.width, height: view.frame.height + 160)
     
     private lazy var scrollV: UIScrollView = {
         let scrollV = UIScrollView()
@@ -107,26 +107,6 @@ class DetailViewController: UIViewController {
         return button
     }()
     
-    //    private lazy var descriptionLabel: ReadMoreTextView = {
-    //        let textView = ReadMoreTextView()
-    //        textView.text = "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum."
-    //
-    //        textView.attributedReadLessText = NSAttributedString(string: " Read less")
-    //        let readMoreTextAttributes: [NSAttributedString.Key: Any] = [
-    //            NSAttributedString.Key.foregroundColor: UIColor.white,
-    //            NSAttributedString.Key.font: UIFont.boldSystemFont(ofSize: 15)
-    //        ]
-    //        let readLessTextAttributes = [
-    //            NSAttributedString.Key.foregroundColor: UIColor.white,
-    //            NSAttributedString.Key.font: UIFont.italicSystemFont(ofSize: 15)
-    //        ]
-    //        textView.maximumNumberOfLines = 4
-    //        textView.attributedReadMoreText = NSAttributedString(string: "... Read more", attributes: readMoreTextAttributes)
-    //        textView.attributedReadLessText = NSAttributedString(string: " Read less", attributes: readLessTextAttributes)
-    //        textView.shouldTrim = true
-    //        return textView
-    //    }()
-    
     private lazy var descriptionLabel: UILabel = {
         let label = UILabel()
         label.text = "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum."
@@ -176,6 +156,7 @@ class DetailViewController: UIViewController {
         button.backgroundColor = .customOrange
         button.layer.cornerRadius = 14
         button.titleLabel?.font = .systemFont(ofSize: 14, weight: .semibold)
+        button.addTarget(self, action: #selector(didTapped), for: .touchUpInside)
         return button
     }()
     
@@ -201,7 +182,7 @@ class DetailViewController: UIViewController {
             make.leading.equalTo(25)
             make.width.equalTo(30)
             make.height.equalTo(25)
-            make.top.equalTo(60)
+            make.top.equalTo(10)
         }
         
         parentContentView.addSubview(productScreen)
@@ -297,13 +278,18 @@ class DetailViewController: UIViewController {
         dismiss(animated: true)
     }
     
-    @objc func didTapped(){
-        print("Tapped")
-        animateDescription()
+    @objc func didTapped(button: UIButton){
+        if button == buyButton{
+            print("Tapped")
+            animateDescription()
+        }else{
+            print("Tapped2")
+            closeDescriptionAnimate()
+        }
+        
     }
     
     private func animateDescription(){
-        print("Tapped2")
         UIView.animate(withDuration: 0.5) {
             self.descriptionConstraint?.update(offset: 230)
             self.view.layoutIfNeeded()

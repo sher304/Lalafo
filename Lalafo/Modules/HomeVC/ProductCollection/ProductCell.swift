@@ -18,6 +18,8 @@ class ProductCell: UICollectionViewCell {
         image.backgroundColor = .white
         image.layer.cornerRadius = 14
         image.layer.masksToBounds = true
+        image.image = UIImage(systemName: "person.fill")
+        image.tintColor = .black
         return image
     }()
     
