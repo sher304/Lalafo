@@ -23,6 +23,4 @@ class HomeRouter: HomeRouterProtocol{
         vc.hero.modalAnimationType = .selectBy(presenting: .zoomSlide(direction: .down), dismissing: .zoomSlide(direction: .up))
         homeVC?.present(vc, animated: true, completion: nil)
     }
-    
-    
 }

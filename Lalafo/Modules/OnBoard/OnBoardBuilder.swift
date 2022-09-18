@@ -11,7 +11,8 @@ class OnBoardBuilder{
     
     static func build() -> UIViewController{
         let vc = OnBoardViewController()
-        let presenter = OnBoardPresenter(view: vc)
+        let router = OnBoardRouter()
+        let presenter = OnBoardPresenter(rotuer: router)
         vc.presenter = presenter
         return vc
     }
