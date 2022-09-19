@@ -10,7 +10,6 @@ import Hero
 
 protocol OnBoardRouterProtocol{
     func openHomeVC()
-    
 }
 
 class OnBoardRouter: OnBoardRouterProtocol{
@@ -18,10 +17,9 @@ class OnBoardRouter: OnBoardRouterProtocol{
     
     func openHomeVC(){
         print("tapped3")
-//        let vc = HomeBuilder.build()
-        let vc = DetailBuilder.build(number: 3)
-//        vc.hero.isEnabled = true
-//        vc.hero.modalAnimationType = .selectBy(presenting: .zoomSlide(direction: .down), dismissing: .zoomSlide(direction: .up))
+        let vc = HomeBuilder.build()
+        vc.hero.isEnabled = true
+        vc.hero.modalAnimationType = .zoom
         onBoardVC?.present(vc, animated: true, completion: nil)
     }
 }

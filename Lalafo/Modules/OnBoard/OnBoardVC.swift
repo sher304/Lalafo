@@ -99,7 +99,5 @@ class OnBoardViewController: UIViewController {
 }
 
 extension OnBoardViewController: OnBoardView{
-
-    
     
 }

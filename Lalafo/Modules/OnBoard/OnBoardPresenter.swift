@@ -13,7 +13,7 @@ protocol OnBoardPresenterProtocol{
 
 class OnBoardPresenter: OnBoardPresenterProtocol{
     
-    private weak var view: OnBoardView?
+    weak var view: OnBoardView?
     
     var router: OnBoardRouterProtocol
     

@@ -41,7 +41,6 @@ class HomePresenter: HomePresenterProtocol{
     }
     
     func didTapped(){
-        let number = self.interactor.number
-        router.openDetailVC(number: number)
+        router.openDetailVC()
     }
 }
