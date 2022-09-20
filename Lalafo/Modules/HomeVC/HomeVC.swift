@@ -57,6 +57,8 @@ class HomeViewController: UIViewController {
         view.backgroundColor = .customDark
         view.layer.cornerRadius = 14
         view.layer.masksToBounds = true
+        view.isUserInteractionEnabled = true
+        view.addGestureRecognizer(UITapGestureRecognizer(target: self, action: #selector(didCartTapped)))
         return view
     }()
     
@@ -189,10 +191,14 @@ class HomeViewController: UIViewController {
         }
     }
     
-    @objc func didTapped(){
-        print("tapped")
+    @objc func didDetailTapped(){
         presenter?.didTapped()
     }
+    
+    @objc func didCartTapped(){
+        presenter?.didCartTapped()
+    }
+    
 }
 
 extension HomeViewController: UICollectionViewDelegateFlowLayout, UICollectionViewDataSource{
