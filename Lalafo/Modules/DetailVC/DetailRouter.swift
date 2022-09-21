@@ -19,7 +19,7 @@ class DetailRouter: DetailRouterProtocol{
     func openCartVC(){
         let vc = CartBuilder.build()
         vc.hero.isEnabled = true
-        vc.hero.modalAnimationType = .selectBy(presenting: .zoomSlide(direction: .down), dismissing: .zoomSlide(direction: .up))
+        vc.hero.modalAnimationType = .selectBy(presenting: .push(direction: .leading), dismissing: .push(direction: .trailing))
         detailVC?.present(vc, animated: true, completion: nil)
     }
 }
