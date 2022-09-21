@@ -25,16 +25,16 @@ class HomeInteractor: HomeInteractorProtocol{
     var number: Int = 0
     
     func loadData() {
-        dataService.getData { [weak self] data in
-            self?.presenter?.didLoadData(date: data)
-        }
+//        dataService.getData { [weak self] data in
+//            self?.presenter?.didLoadData(date: data)
+//        }
     }
     
     func loadNetwork() {
-        networkService.getNetwork { number in
-            self.presenter?.didLoadNetwork(number: number)
-            self.number = number
-        }
+//        networkService.getNetwork { number in
+//            self.presenter?.didLoadNetwork(number: number)
+//            self.number = number
+//        }
     }
     
     

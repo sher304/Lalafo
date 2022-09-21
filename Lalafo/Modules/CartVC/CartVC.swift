@@ -29,8 +29,7 @@ class CartViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        setupConstraints()
-        
+        setupConstraints()   
     }
     
     private func setupConstraints(){

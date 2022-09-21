@@ -22,7 +22,6 @@ class OnBoardPresenter: OnBoardPresenterProtocol{
     }
     
     func loginTapped() {
-        print("Tapped2")
         router.openHomeVC()
     }
     
