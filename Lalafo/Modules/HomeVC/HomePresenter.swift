@@ -9,9 +9,6 @@ import Foundation
 
 protocol HomePresenterProtocol: AnyObject{
     func viewDidLoad()
-    func didLoadData(date: Date)
-    func didLoadNetwork(number: Int)
-    func didCartTapped()
     func didTapped()
     
 }
@@ -32,20 +29,6 @@ class HomePresenter: HomePresenterProtocol{
         interactor.loadData()
         interactor.loadNetwork()
     }
-    
-    func didLoadNetwork(number: Int){
-        
-    }
-    
-    func didLoadData(date: Date){
-        
-    }
-    
-    
-    func didCartTapped(){
-        router.openCartVC()
-    }
-    
     
     func didTapped(){
         router.openDetailVC()

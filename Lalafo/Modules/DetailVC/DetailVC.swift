@@ -155,6 +155,8 @@ class DetailViewController: UIViewController {
         button.backgroundColor = .customOrange
         button.layer.cornerRadius = 14
         button.titleLabel?.font = .systemFont(ofSize: 14, weight: .semibold)
+        button.addTarget(self, action: #selector(didCartTapped), for: .touchUpInside)
+        
         return button
     }()
     
@@ -286,6 +288,10 @@ class DetailViewController: UIViewController {
             closeDescriptionAnimate()
         }
         
+    }
+    
+    @objc private func didCartTapped(){
+        presenter?.didCartTapped()
     }
     
     private func animateDescription(){

@@ -93,7 +93,6 @@ class OnBoardViewController: UIViewController {
     }
     
     @objc func loginTapped(){
-        print("Tapped")
         presenter?.loginTapped()
     }
 }

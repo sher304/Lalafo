@@ -8,14 +8,11 @@
 import Foundation
 
 protocol CartRouterProtocol {
-    func openCartView()
+    
 }
 
 
 class CartRouter: CartRouterProtocol{
-    
-    func openCartView(){
-        
-    }
+
 }
 

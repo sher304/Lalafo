@@ -9,7 +9,7 @@ import Foundation
 
 protocol DetailPresenterProtocol: AnyObject{
     func viewDidLoad()
-    
+    func didCartTapped()
 }
 
 class DetailPresenter: DetailPresenterProtocol{
@@ -24,5 +24,9 @@ class DetailPresenter: DetailPresenterProtocol{
     
     func viewDidLoad(){
         
+    }
+    
+    func didCartTapped() {
+        router.openCartVC()
     }
 }

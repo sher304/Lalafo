@@ -16,7 +16,6 @@ class OnBoardRouter: OnBoardRouterProtocol{
     weak var onBoardVC: OnBoardViewController?
     
     func openHomeVC(){
-        print("tapped3")
         let vc = HomeBuilder.build()
         vc.hero.isEnabled = true
         vc.hero.modalAnimationType = .zoom
