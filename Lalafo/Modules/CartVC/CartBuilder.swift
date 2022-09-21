@@ -11,8 +11,10 @@ import UIKit
 class CartBuilder{
     
     static func build() -> UIViewController{
+        let router = CartRouter()
+        let presenter = CartPresenter(rotuer: router)
         let vc = CartViewController()
-        let presenter = CartPresenter(view: vc)
+        presenter.view = vc
         vc.presenter = presenter
         return vc
     }

@@ -14,7 +14,7 @@ protocol OnBoardView: AnyObject{
 
 class OnBoardViewController: UIViewController {
     
-    var presenter: OnBoardPresenterService!
+    var presenter: OnBoardPresenterProtocol?
     
     private lazy var informLabel: UILabel = {
         let label = UILabel()
@@ -42,10 +42,20 @@ class OnBoardViewController: UIViewController {
         return button
     }()
     
+    private lazy var loginAccount: UIButton = {
+        let button = UIButton(type: .system)
+        button.setTitle("Sign In", for: .normal)
+        button.setTitleColor(.customDark, for: .normal)
+        button.backgroundColor = .white
+        button.layer.cornerRadius = 14
+        button.layer.masksToBounds = true
+        button.addTarget(self, action: #selector(loginTapped), for: .touchUpInside)
+        return button
+    }()
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         setupConstraints()
-        
     }
     
     private func setupConstraints(){
@@ -72,11 +82,22 @@ class OnBoardViewController: UIViewController {
             make.height.equalTo(55)
             make.top.equalTo(descriptionLabel.snp.bottom).offset(130)
         }
+        
+        view.addSubview(loginAccount)
+        loginAccount.snp.makeConstraints { make in
+            make.leading.equalTo(25)
+            make.trailing.equalTo(-25)
+            make.height.equalTo(55)
+            make.top.equalTo(regisetAccount.snp.bottom).offset(20)
+        }
+    }
+    
+    @objc func loginTapped(){
+        print("Tapped")
+        presenter?.loginTapped()
     }
 }
 
 extension OnBoardViewController: OnBoardView{
-
-    
     
 }

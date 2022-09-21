@@ -7,16 +7,23 @@
 
 import Foundation
 
-protocol OnBoardPresenterService{
-    
-    init(view: OnBoardView)
+protocol OnBoardPresenterProtocol{
+    func loginTapped()
 }
 
-class OnBoardPresenter: OnBoardPresenterService{
+class OnBoardPresenter: OnBoardPresenterProtocol{
     
-    private weak var view: OnBoardView?
+    weak var view: OnBoardView?
     
-    required init(view: OnBoardView) {
-        self.view = view
+    var router: OnBoardRouterProtocol
+    
+    init(rotuer: OnBoardRouterProtocol){
+        self.router = rotuer
     }
+    
+    func loginTapped() {
+        print("Tapped2")
+        router.openHomeVC()
+    }
+    
 }

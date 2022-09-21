@@ -14,7 +14,7 @@ protocol CartView: AnyObject{
 
 class CartViewController: UIViewController {
     
-    var presenter: CartPresenterService!
+    var presenter: CartPresenterService?
     
     override func viewDidLoad() {
         super.viewDidLoad()

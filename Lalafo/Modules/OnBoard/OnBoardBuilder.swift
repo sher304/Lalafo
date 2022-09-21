@@ -10,10 +10,12 @@ import UIKit
 class OnBoardBuilder{
     
     static func build() -> UIViewController{
+        let router = OnBoardRouter()
+        let presenter = OnBoardPresenter(rotuer: router)
         let vc = OnBoardViewController()
-        let presenter = OnBoardPresenter(view: vc)
         vc.presenter = presenter
+        presenter.view = vc
+        router.onBoardVC = vc
         return vc
     }
-    
 }

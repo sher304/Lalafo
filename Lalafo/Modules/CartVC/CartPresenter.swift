@@ -9,14 +9,19 @@ import Foundation
 
 protocol CartPresenterService{
     
-    init(view: CartView)
+    
 }
 
 class CartPresenter: CartPresenterService{
     
-    private weak var view: CartView?
+    weak var view: CartView?
     
-    required init(view: CartView) {
-        self.view = view
+    var router: CartRouterProtocol
+    
+    
+    
+    init(rotuer: CartRouterProtocol){
+        self.router = rotuer
     }
+    
 }

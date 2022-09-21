@@ -11,6 +11,7 @@ protocol HomePresenterProtocol: AnyObject{
     func viewDidLoad()
     func didLoadData(date: Date)
     func didLoadNetwork(number: Int)
+    func didCartTapped()
     func didTapped()
     
 }
@@ -40,8 +41,13 @@ class HomePresenter: HomePresenterProtocol{
         
     }
     
+    
+    func didCartTapped(){
+        router.openCartVC()
+    }
+    
+    
     func didTapped(){
-        let number = self.interactor.number
-        router.openDetailVC(number: number)
+        router.openDetailVC()
     }
 }

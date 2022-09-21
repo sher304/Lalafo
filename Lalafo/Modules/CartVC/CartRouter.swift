@@ -7,6 +7,15 @@
 
 import Foundation
 
-protocol CartRouter {
-    
+protocol CartRouterProtocol {
+    func openCartView()
 }
+
+
+class CartRouter: CartRouterProtocol{
+    
+    func openCartView(){
+        
+    }
+}
+

@@ -9,8 +9,8 @@ import UIKit
 
 class DetailBuilder{
     
-    static func build(number: Int) -> UIViewController{
-        let interactor = DetailInteractor(number: number)
+    static func build() -> UIViewController{
+        let interactor = DetailInteractor()
         let router = DetailRouter()
         let presenter = DetailPresenter(interactor: interactor, router: router)
         let vc = DetailViewController()
