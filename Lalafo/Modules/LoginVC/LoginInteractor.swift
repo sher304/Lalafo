@@ -14,13 +14,15 @@ protocol LoginInteractorProtocol{
 
 class LoginInteractor: LoginInteractorProtocol{
     
+    var presenter: LoginPresenterProtocol?
+    
     func login(email: String, password: String){
-        FirebaseAuth.Auth.auth().signIn(withEmail: email, password: password) { result, error in
+        FirebaseAuth.Auth.auth().signIn(withEmail: email, password: password) { [weak self] result, error in
             guard error == nil else {
                 print(error?.localizedDescription ?? "None")
                 return
             }
-            print("Successfully Signed In!")
+            self?.presenter?.openHomeVC()
         }
     }
 }

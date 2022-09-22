@@ -17,6 +17,7 @@ class LoginBuilder{
         let presenter = LoginPresenter(router: rotuer, interactor: interactor)
         let vc = LoginViewController()
         presenter.view = vc
+        interactor.presenter = presenter
         vc.presenter = presenter
         rotuer.loginVC = vc
         return vc

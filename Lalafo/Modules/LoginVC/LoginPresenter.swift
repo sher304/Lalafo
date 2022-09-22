@@ -9,6 +9,7 @@ import Foundation
 
 protocol LoginPresenterProtocol{
     func didLoginTapped(email: String, password: String)
+    func openHomeVC()
 }
 
 class LoginPresenter: LoginPresenterProtocol{
@@ -26,5 +27,9 @@ class LoginPresenter: LoginPresenterProtocol{
     
     func didLoginTapped(email: String, password: String){
         interactor.login(email: email, password: password)
+    }
+    
+    func openHomeVC(){
+        router.openHomeVC()
     }
 }
