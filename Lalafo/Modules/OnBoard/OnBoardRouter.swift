@@ -16,10 +16,10 @@ class OnBoardRouter: OnBoardRouterProtocol{
     weak var onBoardVC: OnBoardViewController?
     
     func openHomeVC(){
-        let vc = HomeBuilder.build()
+        let vc = LoginBuilder.build()
         vc.hero.isEnabled = true
         vc.hero.modalAnimationType = .zoom
         onBoardVC?.present(vc, animated: true, completion: nil)
     }
 }
- 
+

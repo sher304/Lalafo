@@ -40,7 +40,7 @@ class CartViewController: UIViewController {
             make.leading.equalTo(25)
             make.width.equalTo(30)
             make.height.equalTo(25)
-            make.top.equalTo(10)
+            make.top.equalTo(40)
         }
     }
     
