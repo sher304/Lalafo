@@ -9,6 +9,7 @@ import Foundation
 
 protocol OnBoardPresenterProtocol{
     func loginTapped()
+    func registerTapped()
 }
 
 class OnBoardPresenter: OnBoardPresenterProtocol{
@@ -22,7 +23,11 @@ class OnBoardPresenter: OnBoardPresenterProtocol{
     }
     
     func loginTapped() {
-        router.openHomeVC()
+        router.openLoginVC()
+    }
+    
+    func registerTapped(){
+        router.openRegisterVC()
     }
     
 }

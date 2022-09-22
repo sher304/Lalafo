@@ -39,6 +39,7 @@ class OnBoardViewController: UIViewController {
         button.backgroundColor = .customGrayTint
         button.layer.cornerRadius = 14
         button.layer.masksToBounds = true
+        button.addTarget(self, action: #selector(regiseterTapped), for: .touchUpInside)
         return button
     }()
     
@@ -92,8 +93,12 @@ class OnBoardViewController: UIViewController {
         }
     }
     
-    @objc func loginTapped(){
+    @objc private func loginTapped(){
         presenter?.loginTapped()
+    }
+    
+    @objc private func regiseterTapped(){
+        presenter?.registerTapped()
     }
 }
 

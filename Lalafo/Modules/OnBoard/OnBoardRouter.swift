@@ -9,17 +9,25 @@ import Foundation
 import Hero
 
 protocol OnBoardRouterProtocol{
-    func openHomeVC()
+    func openLoginVC()
+    func openRegisterVC()
 }
 
 class OnBoardRouter: OnBoardRouterProtocol{
     weak var onBoardVC: OnBoardViewController?
     
-    func openHomeVC(){
-        let vc = HomeBuilder.build()
+    func openLoginVC(){
+        let vc = LoginBuilder.build()
         vc.hero.isEnabled = true
-        vc.hero.modalAnimationType = .zoom
+        vc.hero.modalAnimationType = .selectBy(presenting: .zoom, dismissing: .zoomOut)
+        onBoardVC?.present(vc, animated: true, completion: nil)
+    }
+    
+    func openRegisterVC(){
+        let vc = RegisterBuilder.build()
+        vc.hero.isEnabled = true
+        vc.hero.modalAnimationType = .selectBy(presenting: .zoom, dismissing: .zoomOut)
         onBoardVC?.present(vc, animated: true, completion: nil)
     }
 }
- 
+
