@@ -14,11 +14,16 @@ protocol RegisterInteractorProtocol: AnyObject{
 
 class RegisterInteractor: RegisterInteractorProtocol{
     
+    var presenter: RegisterPresenterProtocol?
+    
+    
     func registerAccount(email: String, password: String){
         FirebaseAuth.Auth.auth().createUser(withEmail: email, password: password) { [weak self] result, error in
             guard error == nil else {
                 print(error?.localizedDescription ?? "None")
+                self?.presenter?.errorShow(message: error?.localizedDescription ?? "None")
                 return }
+            self?.presenter?.openBoardVC()
         }
     }
 }

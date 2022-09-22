@@ -53,6 +53,7 @@ class LoginViewController: UIViewController {
             string: "Email",
             attributes: [NSAttributedString.Key.foregroundColor: UIColor.customGray]
         )
+        textF.autocapitalizationType = .none
         return textF
     }()
     
@@ -71,6 +72,7 @@ class LoginViewController: UIViewController {
             string: "Password",
             attributes: [NSAttributedString.Key.foregroundColor: UIColor.customGray]
         )
+        textF.autocapitalizationType = .none
         return textF
     }()
     

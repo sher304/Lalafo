@@ -9,7 +9,7 @@ import UIKit
 import SnapKit
 
 protocol RegisterView: AnyObject{
-    
+    func showError(message: String)
 }
 
 class RegisterViewController: UIViewController {
@@ -38,11 +38,12 @@ class RegisterViewController: UIViewController {
         return button
     }()
     
-    private lazy var loginLabel: UILabel = {
+    private lazy var registerLabel: UILabel = {
         let label = UILabel()
         label.text = "Sign Up"
         label.textColor = .black
         label.font = .systemFont(ofSize: 35, weight: .bold)
+        label.numberOfLines = 0
         return label
     }()
     
@@ -54,6 +55,7 @@ class RegisterViewController: UIViewController {
             string: "Email",
             attributes: [NSAttributedString.Key.foregroundColor: UIColor.customGray]
         )
+        textF.autocapitalizationType = .none
         return textF
     }()
     
@@ -72,6 +74,7 @@ class RegisterViewController: UIViewController {
             string: "Password",
             attributes: [NSAttributedString.Key.foregroundColor: UIColor.customGray]
         )
+        textF.autocapitalizationType = .none
         return textF
     }()
     
@@ -105,10 +108,12 @@ class RegisterViewController: UIViewController {
             make.bottom.equalTo(-120)
         }
         
-        view.addSubview(loginLabel)
-        loginLabel.snp.makeConstraints { make in
+        view.addSubview(registerLabel)
+        registerLabel.snp.makeConstraints { make in
             make.leading.equalTo(30)
             make.centerY.equalToSuperview().offset(-60)
+            make.trailing.equalTo(-60)
+            make.height.equalTo(100)
         }
         
         view.addSubview(emailTF)
@@ -153,8 +158,14 @@ class RegisterViewController: UIViewController {
     
     @objc private func didBackTapped(){
         dismiss(animated: true, completion: nil)
-    }}
+    }
+    
+}
+
 
 extension RegisterViewController: RegisterView{
-    
+    func showError(message: String){
+        self.registerLabel.font = .systemFont(ofSize: 15, weight: .bold)
+        self.registerLabel.text = message
+    }
 }
