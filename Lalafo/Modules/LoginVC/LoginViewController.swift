@@ -37,6 +37,43 @@ class LoginViewController: UIViewController {
         return button
     }()
     
+    private lazy var loginLabel: UILabel = {
+        let label = UILabel()
+        label.text = "Login"
+        label.textColor = .black
+        label.font = .systemFont(ofSize: 35, weight: .bold)
+        return label
+    }()
+    
+    private lazy var emailTF: UITextField = {
+        let textF = UITextField()
+        textF.placeholder = "Email"
+        textF.textColor = .black
+        textF.autocorrectionType = .no
+        return textF
+    }()
+    
+    private lazy var emailUnderLine: UIView = {
+        let view = UIView()
+        view.backgroundColor = .black
+        return view
+    }()
+    
+    private lazy var passwordTF: UITextField = {
+        let textF = UITextField()
+        textF.placeholder = "Password"
+        textF.textColor = .black
+        textF.autocorrectionType = .no
+        textF.isSecureTextEntry = true
+        return textF
+    }()
+    
+    private lazy var passwordUnderLine: UIView = {
+        let view = UIView()
+        view.backgroundColor = .black
+        return view
+    }()
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         setupConstraints()
@@ -55,15 +92,56 @@ class LoginViewController: UIViewController {
         
         view.addSubview(loginBtn)
         loginBtn.snp.makeConstraints { make in
-            make.leading.equalTo(20)
-            make.trailing.equalTo(-20)
+            make.leading.equalTo(35)
+            make.trailing.equalTo(-35)
             make.height.equalTo(55)
-            make.bottom.equalTo(-70)
+            make.bottom.equalTo(-120)
         }
+        
+        view.addSubview(loginLabel)
+        loginLabel.snp.makeConstraints { make in
+            make.leading.equalTo(30)
+            make.centerY.equalToSuperview().offset(-60)
+        }
+        
+        view.addSubview(emailTF)
+        emailTF.snp.makeConstraints { make in
+            make.centerY.equalToSuperview()
+            make.leading.equalTo(30)
+            make.trailing.equalTo(-30)
+            make.height.equalTo(45)
+        }
+        
+        view.addSubview(emailUnderLine)
+        emailUnderLine.snp.makeConstraints { make in
+            make.top.equalTo(emailTF.snp.bottom)
+            make.leading.equalTo(emailTF.snp.leading)
+            make.trailing.equalTo(emailTF.snp.trailing)
+            make.height.equalTo(1)
+        }
+        
+        view.addSubview(passwordTF)
+        passwordTF.snp.makeConstraints { make in
+            make.leading.equalTo(30)
+            make.trailing.equalTo(-30)
+            make.height.equalTo(45)
+            make.top.equalTo(emailUnderLine.snp.bottom).offset(50)
+        }
+        
+        view.addSubview(passwordUnderLine)
+        passwordUnderLine.snp.makeConstraints { make in
+            make.top.equalTo(passwordTF.snp.bottom)
+            make.leading.equalTo(passwordTF.snp.leading)
+            make.trailing.equalTo(passwordTF.snp.trailing)
+            make.height.equalTo(1)
+        }
+        
     }
     
     @objc private func didLoginTapped(){
-        presenter?.didLoginTapped()
+        guard let email = emailTF.text else { return }
+        guard let password = passwordTF.text else { return }
+        presenter?.didLoginTapped(email: email, password: password)
     }
     
     @objc private func didBackTapped(){
@@ -72,5 +150,18 @@ class LoginViewController: UIViewController {
 }
 
 extension LoginViewController: LoginView{
+    
+}
+
+extension UITextField {
+    
+    func addBottomBorder() {
+        let bottomline = CALayer()
+        bottomline.frame = CGRect(x: 0,y:self.frame.size.height - 1, width: self.frame.size.width,height: 1)
+        bottomline.backgroundColor = UIColor(red: 255.0/255.0, green: 255.0/255.0, blue: 255.0, alpha: 1.0).cgColor
+        borderStyle = .none
+        self.layer.addSublayer(bottomline)
+        self.layer.masksToBounds = true
+    }
     
 }

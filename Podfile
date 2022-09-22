@@ -10,4 +10,6 @@ target 'Lalafo' do
 	pod 'Kingfisher'
 	pod 'Hero'
 	pod 'ReadMoreTextView'
+	pod 'Firebase/Core'
+	pod 'Firebase/Auth'
 end
