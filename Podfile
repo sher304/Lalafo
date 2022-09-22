@@ -12,4 +12,5 @@ target 'Lalafo' do
 	pod 'ReadMoreTextView'
 	pod 'Firebase/Core'
 	pod 'Firebase/Auth'
+	pod 'Firebase/Firestore'
 end
