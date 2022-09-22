@@ -19,7 +19,6 @@ class LoginInteractor: LoginInteractorProtocol{
     func login(email: String, password: String){
         FirebaseAuth.Auth.auth().signIn(withEmail: email, password: password) { [weak self] result, error in
             guard error == nil else {
-                print(error?.localizedDescription ?? "None")
                 self?.presenter?.showMessage(message: error?.localizedDescription ?? "Error")
                 return
             }
