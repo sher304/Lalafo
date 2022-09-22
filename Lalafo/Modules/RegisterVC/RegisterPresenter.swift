@@ -10,6 +10,8 @@ import Foundation
 
 protocol RegisterPresenterProtocol{
     func registerAccount(email: String, password: String)
+    func openBoardVC()
+    func errorShow(message: String)
 }
 
 class RegisterPresenter: RegisterPresenterProtocol{
@@ -21,6 +23,14 @@ class RegisterPresenter: RegisterPresenterProtocol{
     
     func registerAccount(email: String, password: String){
         interactor.registerAccount(email: email, password: password)
+    }
+    
+    func openBoardVC(){
+        router.openBoardVC()
+    }
+    
+    func errorShow(message: String){
+        view?.showError(message: message)
     }
     
     init(router: RegisterRouterProtocol, interactor: RegisterInteractorProtocol){

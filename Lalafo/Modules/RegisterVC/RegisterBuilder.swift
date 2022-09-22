@@ -17,6 +17,7 @@ class RegisterBuilder {
         let presenter = RegisterPresenter(router: router, interactor: interactor)
         let vc = RegisterViewController()
         presenter.view = vc
+        interactor.presenter = presenter
         vc.presenter = presenter
         router.regiseterVC = vc
         return vc

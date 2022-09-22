@@ -9,7 +9,7 @@ import UIKit
 import SnapKit
 
 protocol LoginView: AnyObject{
-    
+    func showMessage(message: String)
 }
 
 class LoginViewController: UIViewController {
@@ -42,6 +42,7 @@ class LoginViewController: UIViewController {
         label.text = "Login"
         label.textColor = .black
         label.font = .systemFont(ofSize: 35, weight: .bold)
+        label.numberOfLines = 0
         return label
     }()
     
@@ -53,6 +54,7 @@ class LoginViewController: UIViewController {
             string: "Email",
             attributes: [NSAttributedString.Key.foregroundColor: UIColor.customGray]
         )
+        textF.autocapitalizationType = .none
         return textF
     }()
     
@@ -71,6 +73,7 @@ class LoginViewController: UIViewController {
             string: "Password",
             attributes: [NSAttributedString.Key.foregroundColor: UIColor.customGray]
         )
+        textF.autocapitalizationType = .none
         return textF
     }()
     
@@ -108,6 +111,8 @@ class LoginViewController: UIViewController {
         loginLabel.snp.makeConstraints { make in
             make.leading.equalTo(30)
             make.centerY.equalToSuperview().offset(-60)
+            make.trailing.equalTo(-60)
+            make.height.equalTo(100)
         }
         
         view.addSubview(emailTF)
@@ -156,7 +161,10 @@ class LoginViewController: UIViewController {
 }
 
 extension LoginViewController: LoginView{
-    
+    func showMessage(message: String){
+        self.loginLabel.font = . systemFont(ofSize: 15, weight: .bold)
+        self.loginLabel.text = message
+    }
 }
 
 extension UITextField {

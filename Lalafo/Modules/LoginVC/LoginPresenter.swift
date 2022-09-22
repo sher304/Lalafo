@@ -10,6 +10,7 @@ import Foundation
 protocol LoginPresenterProtocol{
     func didLoginTapped(email: String, password: String)
     func openHomeVC()
+    func showMessage(message: String)
 }
 
 class LoginPresenter: LoginPresenterProtocol{
@@ -31,5 +32,9 @@ class LoginPresenter: LoginPresenterProtocol{
     
     func openHomeVC(){
         router.openHomeVC()
+    }
+    
+    func showMessage(message: String){
+        view?.showMessage(message: message)
     }
 }
