@@ -83,6 +83,18 @@ class LoginViewController: UIViewController {
         return view
     }()
     
+    private lazy var abstractShapeOne: UIImageView = {
+        let image = UIImageView()
+        image.image = UIImage(named: "shape-4")
+        return image
+    }()
+    
+    private lazy var abstractShapeTwo: UIImageView = {
+        let image = UIImageView()
+        image.image = UIImage(named: "shape-5")
+        return image
+    }()
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         setupConstraints()
@@ -90,6 +102,18 @@ class LoginViewController: UIViewController {
     
     private func setupConstraints(){
         view.backgroundColor = .white
+        
+        view.addSubview(abstractShapeOne)
+        abstractShapeOne.snp.makeConstraints { make in
+            make.trailing.equalTo(-15)
+            make.top.equalTo(30)
+        }
+        
+        view.addSubview(abstractShapeTwo)
+        abstractShapeTwo.snp.makeConstraints { make in
+            make.leading.equalTo(10)
+            make.top.equalTo(100)
+        }
         
         view.addSubview(backButton)
         backButton.snp.makeConstraints { make in

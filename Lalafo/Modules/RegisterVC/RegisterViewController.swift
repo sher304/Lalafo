@@ -78,10 +78,29 @@ class RegisterViewController: UIViewController {
         return textF
     }()
     
+    
     private lazy var passwordUnderLine: UIView = {
         let view = UIView()
         view.backgroundColor = .black
         return view
+    }()
+    
+    private lazy var abstractShapeOne: UIImageView = {
+        let image = UIImageView()
+        image.image = UIImage(named: "shape-1")
+        return image
+    }()
+    
+    private lazy var abstractShapeTwo: UIImageView = {
+        let image = UIImageView()
+        image.image = UIImage(named: "shape-2")
+        return image
+    }()
+    
+    private lazy var abstractShapeThree: UIImageView = {
+        let image = UIImageView()
+        image.image = UIImage(named: "shape-3")
+        return image
     }()
     
     override func viewDidLoad() {
@@ -92,12 +111,30 @@ class RegisterViewController: UIViewController {
     private func setupConstraints(){
         view.backgroundColor = .white
         
+        view.addSubview(abstractShapeOne)
+        abstractShapeOne.snp.makeConstraints { make in
+            make.top.equalTo(150)
+            make.leading.equalTo(10)
+        }
+        
+        view.addSubview(abstractShapeTwo)
+        abstractShapeTwo.snp.makeConstraints { make in
+            make.top.equalTo(45)
+            make.trailing.equalTo(-10)
+        }
+        
+        view.addSubview(abstractShapeThree)
+        abstractShapeThree.snp.makeConstraints { make in
+            make.top.equalTo(abstractShapeTwo.snp.bottom)
+            make.centerX.equalTo(abstractShapeTwo)
+        }
+        
         view.addSubview(backButton)
         backButton.snp.makeConstraints { make in
             make.leading.equalTo(25)
             make.width.equalTo(30)
             make.height.equalTo(25)
-            make.top.equalTo(40)
+            make.top.equalTo(50)
         }
         
         view.addSubview(loginBtn)
