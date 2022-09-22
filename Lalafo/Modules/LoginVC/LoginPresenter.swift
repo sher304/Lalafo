@@ -25,7 +25,6 @@ class LoginPresenter: LoginPresenterProtocol{
     }
     
     func didLoginTapped(email: String, password: String){
-        print(email)
-        print(password)
+        interactor.login(email: email, password: password)
     }
 }

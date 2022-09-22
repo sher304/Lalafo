@@ -1,5 +1,5 @@
 //
-//  LoginViewController.swift
+//  RegisterViewController.swift
 //  Lalafo
 //
 //  Created by Шермат Эшеров on 22/9/22.
@@ -8,13 +8,14 @@
 import UIKit
 import SnapKit
 
-protocol LoginView: AnyObject{
+protocol RegisterView: AnyObject{
     
 }
 
-class LoginViewController: UIViewController {
+class RegisterViewController: UIViewController {
     
-    var presenter: LoginPresenter?
+    var presenter: RegisterPresenterProtocol?
+    
     
     private lazy var backButton: UIButton = {
         let button = UIButton(type: .system)
@@ -29,7 +30,7 @@ class LoginViewController: UIViewController {
     private lazy var loginBtn: UIButton = {
         let button = UIButton(type: .system)
         button.backgroundColor = .customDark
-        button.setTitle("Login", for: .normal)
+        button.setTitle("Create", for: .normal)
         button.setTitleColor(.white, for: .normal)
         button.layer.cornerRadius = 14
         button.layer.masksToBounds = true
@@ -39,7 +40,7 @@ class LoginViewController: UIViewController {
     
     private lazy var loginLabel: UILabel = {
         let label = UILabel()
-        label.text = "Login"
+        label.text = "Sign Up"
         label.textColor = .black
         label.font = .systemFont(ofSize: 35, weight: .bold)
         return label
@@ -147,27 +148,13 @@ class LoginViewController: UIViewController {
     @objc private func didLoginTapped(){
         guard let email = emailTF.text else { return }
         guard let password = passwordTF.text else { return }
-        presenter?.didLoginTapped(email: email, password: password)
+        presenter?.registerAccount(email: email, password: password)
     }
     
     @objc private func didBackTapped(){
         dismiss(animated: true, completion: nil)
-    }
-}
+    }}
 
-extension LoginViewController: LoginView{
-    
-}
-
-extension UITextField {
-    
-    func addBottomBorder() {
-        let bottomline = CALayer()
-        bottomline.frame = CGRect(x: 0,y:self.frame.size.height - 1, width: self.frame.size.width,height: 1)
-        bottomline.backgroundColor = UIColor(red: 255.0/255.0, green: 255.0/255.0, blue: 255.0, alpha: 1.0).cgColor
-        borderStyle = .none
-        self.layer.addSublayer(bottomline)
-        self.layer.masksToBounds = true
-    }
+extension RegisterViewController: RegisterView{
     
 }
