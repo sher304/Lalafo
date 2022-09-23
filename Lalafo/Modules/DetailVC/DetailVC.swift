@@ -17,7 +17,9 @@ class DetailViewController: UIViewController {
     
     var presenter: DetailPresenterProtocol?
     
-    private lazy var contentSize = CGSize(width: view.frame.width, height: view.frame.height + 160)
+    private lazy var contentSize = CGSize(width: view.frame.width, height: view.frame.height + CGFloat(heightFrame))
+    
+    var heightFrame: Int = 160
     
     private lazy var scrollV: UIScrollView = {
         let scrollV = UIScrollView()
@@ -281,9 +283,13 @@ class DetailViewController: UIViewController {
     var didTapped = true
     @objc func didDescriptionTapped(button: UIButton){
         if didTapped{
+            heightFrame = 320
+            self.view.layoutIfNeeded()
             didTapped = false
             animateDescription()
         }else{
+            heightFrame = 160
+            self.view.layoutIfNeeded()
             didTapped = true
             closeDescriptionAnimate()
         }
@@ -296,7 +302,7 @@ class DetailViewController: UIViewController {
     
     private func animateDescription(){
         UIView.animate(withDuration: 0.5) {
-            self.descriptionConstraint?.update(offset: 230)
+            self.descriptionConstraint?.update(offset: 400)
             self.view.layoutIfNeeded()
         }
     }
