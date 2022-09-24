@@ -293,9 +293,8 @@ class DetailViewController: UIViewController {
             didTapped = true
             closeDescriptionAnimate()
         }
-        
     }
-    
+
     @objc private func didCartTapped(){
         presenter?.didCartTapped()
     }
