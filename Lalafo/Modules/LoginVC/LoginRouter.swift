@@ -18,7 +18,7 @@ class LoginRouter: LoginRouterProtocol{
     weak var loginVC: LoginViewController?
     
     func openHomeVC() {
-        let vc = HomeBuilder.build()
+        let vc = TapBar()
         vc.hero.isEnabled = true
         vc.hero.modalAnimationType = .zoom
         loginVC?.present(vc, animated: true, completion: nil)
