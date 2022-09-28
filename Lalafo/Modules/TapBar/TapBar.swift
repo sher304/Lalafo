@@ -12,26 +12,21 @@ class TapBar: UITabBarController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        view.backgroundColor = .systemBackground
-        UITabBar.appearance().barTintColor = .systemBackground
-        tabBar.tintColor = .label
-        setupTapConstraints()
+        selectedIndex = 1
     }
     
-    private func createTapController(vc: UIViewController, title: String, icon: UIImage) -> UIViewController{
-        let navController = UINavigationController(rootViewController: vc)
-        navController.tabBarItem.title = title
-        navController.tabBarItem.image = icon
-        navController.navigationBar.prefersLargeTitles = true
-        vc.navigationItem.title = title
-        return navController
+    private func middleButton(){
+        let middleButton = UIButton(frame: CGRect(x: (self.view.bounds.width / 2), y: -20, width: 60, height: 60))
+        middleButton.setBackgroundImage(UIImage(systemName: "homekit"), for: .normal)
+        self.tabBar.addSubview(middleButton)
+        self.view.layoutIfNeeded()
+        middleButton.addTarget(self, action: #selector(middleTapped), for: .touchUpInside)
     }
     
-    private func setupTapConstraints(){
-        viewControllers = [
-            createTapController(vc: HomeBuilder.build(), title: "Home", icon: UIImage(systemName: "homekit")!),
-            createTapController(vc: CartBuilder.build(), title: "Cart", icon: UIImage(systemName: "suitcase.cart")!)
-        ]
+    @objc private func middleTapped(){
+        let vc = DetailBuilder.build()
+        self.selectedIndex = 1
     }
+    
     
 }
