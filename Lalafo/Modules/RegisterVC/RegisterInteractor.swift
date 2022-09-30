@@ -7,6 +7,7 @@
 
 import Foundation
 import FirebaseAuth
+import FirebaseDatabase
 
 protocol RegisterInteractorProtocol: AnyObject{
     func registerAccount(email: String, password: String)
@@ -15,7 +16,6 @@ protocol RegisterInteractorProtocol: AnyObject{
 class RegisterInteractor: RegisterInteractorProtocol{
     
     var presenter: RegisterPresenterProtocol?
-    
     
     func registerAccount(email: String, password: String){
         FirebaseAuth.Auth.auth().createUser(withEmail: email, password: password) { [weak self] result, error in

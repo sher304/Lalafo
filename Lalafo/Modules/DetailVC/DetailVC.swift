@@ -19,7 +19,7 @@ class DetailViewController: UIViewController {
     
     private lazy var contentSize = CGSize(width: view.frame.width, height: view.frame.height + CGFloat(heightFrame))
     
-    var heightFrame: Int = 160
+    var heightFrame: Int = 260
     
     private lazy var scrollV: UIScrollView = {
         let scrollV = UIScrollView()
@@ -114,6 +114,7 @@ class DetailViewController: UIViewController {
         label.numberOfLines = 0
         label.isUserInteractionEnabled = true
         label.addGestureRecognizer(UITapGestureRecognizer(target: self, action: #selector(didDescriptionTapped)))
+        label.textColor = .white
         return label
     }()
     
@@ -284,14 +285,14 @@ class DetailViewController: UIViewController {
     @objc func didDescriptionTapped(button: UIButton){
         if didTapped{
             heightFrame = 320
-            self.view.layoutIfNeeded()
             didTapped = false
             animateDescription()
+            self.view.layoutIfNeeded()
         }else{
             heightFrame = 160
-            self.view.layoutIfNeeded()
             didTapped = true
             closeDescriptionAnimate()
+            self.view.layoutIfNeeded()
         }
     }
 
