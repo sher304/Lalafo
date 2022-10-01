@@ -8,7 +8,6 @@
 import UIKit
 
 class DetailBuilder{
-    
     static func build() -> UIViewController{
         let interactor = DetailInteractor()
         let router = DetailRouter()

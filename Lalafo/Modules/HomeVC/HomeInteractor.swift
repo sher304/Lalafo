@@ -36,7 +36,4 @@ class HomeInteractor: HomeInteractorProtocol{
 //            self.number = number
 //        }
     }
-    
-    
-    
 }
